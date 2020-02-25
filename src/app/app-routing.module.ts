@@ -34,7 +34,7 @@ const routes: Routes = [
     loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)
   },
   {path: 'myponds', component: MyPondsComponent},
-  {path: 'users', component: UsersComponent},
+  {path: 'users', component: UsersComponent, canActivate: [AuthGuard]},
   {path: '**', redirectTo: 'auth/login'}
 ];
 

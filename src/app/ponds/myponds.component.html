@@ -19,11 +19,11 @@
       </div>
       <div class="col-sm-3 col-xs-6">
         <div class="form-group form-focus select-focus">
-          <label class="control-label">Company</label>
+          <label class="control-label">Ponds</label>
           <select class="select floating form-control">
-            <option value="">Select Company</option>
-            <option>Global Technologies</option>
-            <option>Delta Infotech</option>
+            <option value="">Select Pond</option>
+            <option>Pond Name</option>
+            <option>Pond Type</option>
           </select>
         </div>
       </div>
@@ -42,31 +42,27 @@
       <div class="col-sm-3 col-xs-6">
         <a href="javascript:" class="btn btn-success btn-block"> Search </a>
       </div>
-    </div>
-    <br><br />
+    </div><br>
     <div class="row">
       <div class="col-md-12">
         <div class="table-responsive">
           <table class="table table-striped custom-table" [mfData]="rows" #mf="mfDataTable" [mfRowsOnPage]="5">
             <thead>
               <tr>
-                <th style="width: 5%">
+                <th style="width: 4%">
                   <mfDefaultSorter by="id">#</mfDefaultSorter>
                 </th>
                 <th style="width: 20%">
-                  <mfDefaultSorter by="user_name">Name</mfDefaultSorter>
+                  <mfDefaultSorter by="pondName">Pond Name</mfDefaultSorter>
                 </th>
                 <th style="width: 30%">
-                  <mfDefaultSorter by="email">Type</mfDefaultSorter>
+                  <mfDefaultSorter by="pondType">Pond Type</mfDefaultSorter>
                 </th>
                 <th style="width: 25%">
-                  <mfDefaultSorter by="company">CubicSize</mfDefaultSorter>
+                  <mfDefaultSorter by="cubicSize">Pond CubicSize</mfDefaultSorter>
                 </th>
-                <th style="width: 20%">
-                  <mfDefaultSorter by="role">Role</mfDefaultSorter>
-                </th>
-                <th style="width: 5%">
-                  <mfDefaultSorter by="action">Action</mfDefaultSorter>
+                <th >
+                  <mfDefaultSorter by="action"></mfDefaultSorter>
                 </th>
               </tr>
             </thead>
@@ -76,17 +72,24 @@
                   <strong>{{item.id}}</strong>
                 </td>
                 <td>
-                  <a href="javascript:" class="avatar">D</a>
-                  <h2><a href="javascript:">{{item.user_name}} <span>{{item.role}}</span></a></h2>
+                  <!-- <a href="javascript:" class="avatar">D</a> -->
+                  <h2><a href="javascript:">{{item.pondName}} 
+                  <span>{{item.role}}</span></a></h2>
                 </td>
-                <td>{{item.email}}</td>
-                <td>{{item.company}}</td>
-                <td>
+                <td>{{item.pondType}}</td>
+                <td>{{item.cubicSize}}</td>
+                <!-- <td>
                   <span
                     [ngClass]="[item.role == 'Employee' ? 'label-success-border' : '',item.role == 'Admin' ? 'label-danger-border' : '',item.role == 'Client' ? 'label-info-border' : '']"
-                    class="label">{{item.role}}</span>
+                    class="label">{{item.role}}
+                  </span>
+
+                </td> -->
+                <td>
+                  <button>Fish health</button>
+                  <button>Production data</button>
                 </td>
-                <td class="text-right">
+                <!-- <td class="text-right">
                   <div class="dropdown">
                     <a href="javascript:" class="action-icon dropdown-toggle" data-toggle="dropdown"
                       aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
@@ -96,7 +99,7 @@
                       </li>
                     </ul>
                   </div>
-                </td>
+                </td> -->
 
               </tr>
             </tbody>

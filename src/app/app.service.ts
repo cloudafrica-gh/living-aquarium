@@ -707,6 +707,7 @@ export class AppService {
 
   public myponds = [
     {
+      id: '1',
       pondName: 'Daniel Porter',
       pondType: 'Hatchery',
       cubicSize: '500sq',
@@ -714,6 +715,7 @@ export class AppService {
       user_id: 451
     },
     {
+      id: '2',
       pondName: 'Barry Cuda',
       pondType: 'Fishery',
       cubicSize: '300sq',
@@ -721,6 +723,7 @@ export class AppService {
       user_id: 452
     },
     {
+      id: '3',
       pondName: 'John Doe',
       pondType: 'Concrete',
       cubicSize: '400sq',
