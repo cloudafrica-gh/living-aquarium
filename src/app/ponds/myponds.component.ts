@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AppService } from 'src/app/app.service';
+import { LivingAquariumService } from '../services/living-aquarium.service';
 
 declare const $: any;
 
@@ -16,7 +17,12 @@ export class MyPondsComponent implements OnInit {
   public addU: any = {};
   public uptU: any = [];
 
-  constructor(private userService: AppService) {
+  public isLoading: string = 'false';
+
+  constructor(
+    private userService: AppService,
+    private laService: LivingAquariumService
+    ) {
     // this.rows = userService.users;
     this.rows = userService.myponds;
     this.srch = [...this.rows];
@@ -42,6 +48,17 @@ export class MyPondsComponent implements OnInit {
       'user_id':0
     };
 
+    this.getPonds();
+  }
+
+  getPonds() {
+    this.laService.getUserFarmPonds()
+      .subscribe(res => {
+        this.rows = res;
+        console.log('get user ponds responds >>>', this.rows);
+      }, err => {
+        console.log('error getting user ponds', err);
+      });
   }
 
   addReset() {

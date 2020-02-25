@@ -9,6 +9,8 @@ import {catchError, tap} from 'rxjs/operators';
 })
 export class LivingAquariumService {
   private dataURL: string = environment.laServer;
+  private laURL: string = environment.laServer;
+
   public headers: HttpHeaders;
 
   constructor( private readonly http: HttpClient) { }
@@ -20,6 +22,24 @@ export class LivingAquariumService {
         tap(_ => this.log(`load realtime transactions >>>>`) ),
         catchError(this.handleError('dafabetApi', []))
       );
+  }
+
+  getAllUserPonds(): Observable<any> {
+    return this.http
+    .get(`${this.laURL}/admin/getallponds`)
+    .pipe(
+      tap(_ => this.log(`load realtime transactions >>>>`) ),
+      catchError(this.handleError('LivingAquarium', []))
+    );
+  }
+
+  getUserFarmPonds(): Observable<any> {
+    return this.http
+    .get(`${this.laURL}/admin/farm/getallponds`)
+    .pipe(
+      tap(_ => this.log(`load user farm ponds >>>>`) ),
+      catchError(this.handleError('LivingAquarium', []))
+    );
   }
 
   private handleError<T>(operation = 'operation', result?: T) {
