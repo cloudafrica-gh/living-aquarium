@@ -707,28 +707,16 @@ export class AppService {
 
   public myponds = [
     {
-      id: '1',
-      pondName: 'Daniel Porter',
-      pondType: 'Hatchery',
-      cubicSize: '500sq',
-      role: 'Admin',
-      user_id: 451
-    },
-    {
-      id: '2',
-      pondName: 'Barry Cuda',
-      pondType: 'Fishery',
-      cubicSize: '300sq',
-      role: 'Employee',
-      user_id: 452
-    },
-    {
-      id: '3',
-      pondName: 'John Doe',
-      pondType: 'Concrete',
-      cubicSize: '400sq',
-      role: 'Client',
-      user_id: 453
+      "id": 1,
+      "userId": 0,
+      "pondName": "test pond",
+      "pondType": "Pond",
+      "cubicSize": 56,
+      "isLargest": 0,
+      "isSmallest": 1,
+      "firstName": "Anderson",
+      "lastName": "Kyeremeh",
+      "farmName": "Yeb Fishery"
     }
   ];
   public users = [

@@ -12,11 +12,17 @@ export class TokenInterceptor {
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     const token = localStorage.getItem('token');
     console.log('checkIn res.token >>> ', token);
+    // if (token) {
+    //   request = request.clone({
+    //     setHeaders: {
+    //       Authorization: 'JWT ' + token
+    //     }
+    //   });
+    // }
+
     if (token) {
       request = request.clone({
-        setHeaders: {
-          Authorization: 'JWT ' + token
-        }
+        headers: request.headers.set("Authorization", "JWT " + token)
       });
     }
     if (!request.headers.has('Content-Type')) {
@@ -32,7 +38,7 @@ export class TokenInterceptor {
     return next.handle(request).pipe(
       map((event: HttpEvent<any>) => {
         if (event instanceof HttpResponse) {
-          console.log('event ==>>>', event);
+          console.log('event ==>>', event);
         }
         return event;
       }),
