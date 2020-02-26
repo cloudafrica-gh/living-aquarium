@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import {IMyDpOptions} from 'mydatepicker';
 import { AppService } from 'src/app/app.service';
-import { Router,ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
+import { LivingAquariumService } from 'src/app/services/living-aquarium.service';
 
-declare const $:any;
+declare const $: any;
 
 @Component({
   selector: 'app-client',
@@ -25,27 +26,41 @@ export class ClientComponent implements OnInit {
   public rows = [];
 
   public srch = [];
-  
-  public addC:any = {};
+
+  public addC: any = {};
   public uptC = [];
   public viewP = [];
   public uptP = [];
-  addClientValidation:boolean = false;
+  addClientValidation: boolean = false;
 
-  constructor(private clientService:AppService,private router:Router) { 
-    this.rows = clientService.clients;
+  constructor(
+    private clientService: AppService,
+    private router: Router,
+    private laService: LivingAquariumService
+    ) {
+    // this.rows = clientService.clients;
     this.srch = [...this.rows];
   }
 
   ngOnInit() {
-
     $('.floating').on('focus blur', function (e) {
       $(this).parents('.form-focus').toggleClass('focused', (e.type === 'focus' || this.value.length > 0));
     }).trigger('blur');
 
+    this.getAllUserPonds();
   }
 
-  addReset(){
+  getAllUserPonds() {
+    this.laService.getAllUserPonds()
+      .subscribe(res => {
+        this.rows = res;
+        console.log('all user ponds responds >>>', this.rows);
+      }, err => {
+        console.log('error getting all user ponds', err);
+      });
+  }
+
+  addReset() {
     let randomnumber = Math.floor(Math.random() * 99);
     this.addC = {'clientID':randomnumber};
     $('#add_client').modal('show');
