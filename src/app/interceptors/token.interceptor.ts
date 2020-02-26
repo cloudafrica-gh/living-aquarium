@@ -11,7 +11,7 @@ export class TokenInterceptor {
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     const token = localStorage.getItem('token');
-    console.log('checkIn res.token >>> ', token);
+    console.log('get Token from storage >>> ', token);
     // if (token) {
     //   request = request.clone({
     //     setHeaders: {
@@ -21,10 +21,10 @@ export class TokenInterceptor {
     // }
 
     if (token) {
-      request = request.clone({
-        headers: request.headers.set("Authorization", "JWT " + token)
-      });
+      console.log('isToken???', JSON.stringify(token));
+      request = request.clone({ headers: request.headers.set('Authorization', '' + token) });
     }
+
     if (!request.headers.has('Content-Type')) {
       request = request.clone({
         setHeaders: {
@@ -43,7 +43,7 @@ export class TokenInterceptor {
         return event;
       }),
       catchError((error: HttpErrorResponse) => {
-        console.log(`Auth Login Error intercept: ${error}`);
+        console.log(`Auth Login Error intercept: ${JSON.stringify(error)}`);
         if (error.status === 401) {
           this.router.navigate(['auth/login']);
         }

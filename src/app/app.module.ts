@@ -27,6 +27,7 @@ import { ReportsinvoiceComponent } from './reports/reportsinvoice/reportsinvoice
 import { DafabetComponent } from './reports/dafabet/dafabet.component';
 import { UsersComponent } from './users/users.component';
 import { MyPondsComponent } from './ponds/myponds.component';
+import { ClientComponent } from './clients/client/client.component';
 
 enableProdMode();
 
@@ -40,7 +41,8 @@ enableProdMode();
     ReportsinvoiceComponent,
     DafabetComponent,
     UsersComponent,
-    MyPondsComponent
+    MyPondsComponent,
+    ClientComponent
   ],
   imports: [
     BrowserModule,
@@ -60,8 +62,8 @@ enableProdMode();
     HttpClientModule
   ],
   providers: [
-    {provide: SLIMSCROLL_DEFAULTS, useValue: { alwaysVisible: false }},
-    {provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true}
+    {provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true},
+    {provide: SLIMSCROLL_DEFAULTS, useValue: { alwaysVisible: false }}
   ],
   bootstrap: [AppComponent]
 })
