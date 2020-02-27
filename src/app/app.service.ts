@@ -333,6 +333,14 @@ export class AppService {
     }
   ];
 
+  public pondsData = [
+    {
+      profitability: 30,
+      growthInWorkforce: 100,
+      growthInProductionUnits: 'string',
+      navigationId: 2
+    }
+  ];
   public clients = [
     {
       firstName: 'John',

@@ -44,7 +44,7 @@ export class ClientComponent implements OnInit {
   }
 
   ngOnInit() {
-    $('.floating').on('focus blur', function(e) {
+    $('.floating').on('focus blur', function (e) {
       $(this).parents('.form-focus').toggleClass('focused', (e.type === 'focus' || this.value.length > 0));
     }).trigger('blur');
 
@@ -61,7 +61,7 @@ export class ClientComponent implements OnInit {
       .subscribe(res => {
         this.rows = res;
         console.log(`ctr: fishPond Health Response: ${JSON.stringify(this.rows)}`);
-        this.router.navigate(['clients/profile/details'], { queryParams: { data: this.rows } });
+        this.router.navigate(['clients/profile/details'], { state: this.rows });
       }, err => {
         console.log(`ctr: error posting fishPond health: ${err}`);
       });
@@ -76,7 +76,7 @@ export class ClientComponent implements OnInit {
       .subscribe(res => {
         this.rows = res;
         console.log('ctr: fishPond production data response ==>', JSON.stringify(res));
-        this.router.navigateByUrl('/clients/profile/details');
+        this.router.navigateByUrl('/clients/profile/details', { state: this.rows });
       }, error => {
         console.log(`ctr: error posting fishPond production data: ${error}`);
       });

@@ -1,14 +1,16 @@
 <div class="page-wrapper">
   <div class="content container-fluid">
-     <div class="row">
-        <div class="col-sm-8">
-          <h4 class="page-title"><a data-dismiss="modal" style="cursor:pointer;">Clients</a> / My Profile</h4>
-        </div>
-        <div class="col-sm-4 text-right m-b-30">
+    <div class="row">
+      <div class="col-sm-8">
+        <h4 class="page-title"><a routerLink="/allponds" data-dismiss="modal" style="cursor:pointer;">all Ponds</a> / My
+        </h4>
+      </div>
+      <!-- <div class="col-sm-4 text-right m-b-30">
           <a (click)="onEdit(viewP.clientID)" class="btn btn-primary rounded"><i class="fa fa-plus"></i> Edit
             Profile</a>
-        </div>
-      </div>
+        </div> -->
+    </div>
+    <!-- 
       <div class="card-box m-b-0">
         <div class="row">
           <div class="col-md-12">
@@ -58,90 +60,117 @@
             </div>
           </div>
         </div>
-      </div>
-      <div class="card-box tab-box">
-        <div class="row user-tabs">
-          <div class="col-lg-12 col-md-12 col-sm-12 line-tabs">
-            <ul class="nav nav-tabs tabs nav-tabs-bottom">
-              <li class="active col-sm-3"><a data-toggle="tab" href="#myprojects">My Projects</a></li>
-              <li class="col-sm-3"><a data-toggle="tab" href="#tasks">Tasks</a></li>
-            </ul>
-          </div>
+      </div> -->
+
+    <div class="card-box tab-box">
+      <div class="row user-tabs">
+        <div class="col-lg-12 col-md-12 col-sm-12 line-tabs">
+          <ul class="nav nav-tabs tabs nav-tabs-bottom">
+            <li class="active col-sm-3"><a data-toggle="tab" href="#myprojects">Fish Pond Health</a></li>
+            <li class="col-sm-3"><a data-toggle="tab" href="#tasks">Fish Pond Production Data</a></li>
+          </ul>
         </div>
       </div>
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="tab-content profile-tab-content">
-            <div id="myprojects" class="tab-pane fade in active">
-              <div class="row">
-                <div class="col-lg-3 col-sm-4">
-                  <div class="card-box project-box">
-                    <div class="dropdown profile-action">
-                      <a href="javascript:" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i
-                          class="fa fa-ellipsis-v"></i></a>
-                      <ul class="dropdown-menu pull-right">
-                        <li><a href="javascript:" data-toggle="modal" data-target="#edit_project"><i class="fa fa-pencil m-r-5"></i>
-                            Edit</a></li>
-                        <li><a href="javascript:" data-toggle="modal" data-target="#delete_project"><i class="fa fa-trash-o m-r-5"></i>
-                            Delete</a></li>
-                      </ul>
-                    </div>
-                    <h4 class="project-title"><a href="javascript:">Food and Drinks</a></h4>
-                    <small class="block text-ellipsis m-b-15">
-                      <span class="text-xs">1</span> <span class="text-muted"> open tasks, </span>
-                      <span class="text-xs">9</span> <span class="text-muted"> tasks completed</span>
-                    </small>
-                    <p class="text-muted">Lorem Ipsum is simply dummy text of the printing and
-                      typesetting industry. When an unknown printer took a galley of type and
-                      scrambled it...
-                    </p>
-                    <div class="pro-deadline m-b-15">
-                      <div class="sub-title">
-                        Deadline:
-                      </div>
-                      <div class="text-muted">
-                        8 Sep 2017
-                      </div>
-                    </div>
-                    <div class="project-members m-b-15">
-                      <div>Project Leader :</div>
-                      <ul class="team-members">
-                        <li>
-                          <a href="javascript:" tooltip="Jeffery Lalor" title="Jeffery Lalor"><img src="assets/img/user.jpg"
-                              alt="Jeffery Lalor"></a>
-                        </li>
-                      </ul>
-                    </div>
-                    <div class="project-members m-b-15">
-                      <div>Team :</div>
-                      <ul class="team-members">
-                        <li>
-                          <a href="javascript:" tooltip="John Doe" title="John Doe"><img src="assets/img/user.jpg" alt="John Doe"></a>
-                        </li>
-                        <li>
-                          <a href="javascript:" tooltip="Richard Miles" title="Richard Miles"><img src="assets/img/user.jpg"
-                              alt="Richard Miles"></a>
-                        </li>
-                        <li>
-                          <a href="javascript:" tooltip="John Smith" title="John Smith"><img src="assets/img/user.jpg"
-                              alt="John Smith"></a>
-                        </li>
-                        <li>
-                          <a href="javascript:" tooltip="Mike Litorus" title="Mike Litorus"><img src="assets/img/user.jpg"
-                              alt="Mike Litorus"></a>
-                        </li>
-                        <li>
-                          <a href="javascript:" class="all-users">+15</a>
-                        </li>
-                      </ul>
-                    </div>
-                    <p class="m-b-5">Progress <span class="text-success pull-right">40%</span></p>
-                    <div class="progress progress-xs m-b-0">
-                      <div class="progress-bar progress-bar-success" role="progressbar" tooltip="40%" title="40%" style="width: 40%"></div>
-                    </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="tab-content profile-tab-content">
+          <div id="myprojects" class="tab-pane fade in active">
+            <div class="row">
+              <div class="col-lg-3 col-sm-4">
+                <div class="card-box project-box">
+                  <div class="dropdown profile-action">
+                    <a href="javascript:" class="action-icon dropdown-toggle" data-toggle="dropdown"
+                      aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+                    <ul class="dropdown-menu pull-right">
+                      <li><a href="javascript:" data-toggle="modal" data-target="#edit_project"><i
+                            class="fa fa-pencil m-r-5"></i>
+                          Edit</a></li>
+                      <li><a href="javascript:" data-toggle="modal" data-target="#delete_project"><i
+                            class="fa fa-trash-o m-r-5"></i>
+                          Delete</a></li>
+                    </ul>
+                  </div>
+                  <h4 class="project-title"><a href="javascript:">Profitability</a></h4>
+                  <small class="block text-ellipsis m-b-15">
+                    <!-- <span class="text-xs">1</span> <span class="text-muted"> open tasks, </span>
+                      <span class="text-xs">9</span> <span class="text-muted"> tasks completed</span> -->
+                  </small>
+                  <p class="">
+                    <b>{{this.fishPondHealth.profitability}}</b>
+                  </p>
+
+                  <p class="m-b-5">Progress <span class="text-success pull-right">30%</span></p>
+                  <div class="progress progress-xs m-b-0">
+                    <div class="progress-bar progress-bar-success" role="progressbar"
+                      tooltip="{{this.fishPondHealth.profitability}}%" title="{{this.fishPondHealth.profitability}}%"
+                      style="width: 30%"></div>
                   </div>
                 </div>
-                <div class="col-lg-3 col-sm-4">
+              </div>
+
+              <div class="col-lg-3 col-sm-4">
+                <div class="card-box project-box">
+                  <div class="dropdown profile-action">
+                    <a href="javascript:" class="action-icon dropdown-toggle" data-toggle="dropdown"
+                      aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+                    <ul class="dropdown-menu pull-right">
+                      <li><a href="javascript:" data-toggle="modal" data-target="#edit_project"><i
+                            class="fa fa-pencil m-r-5"></i>
+                          Edit</a></li>
+                      <li><a href="javascript:" data-toggle="modal" data-target="#delete_project"><i
+                            class="fa fa-trash-o m-r-5"></i>
+                          Delete</a></li>
+                    </ul>
+                  </div>
+                  <h4 class="project-title"><a href="javascript:">Growth In Workforce</a></h4>
+                  <small class="block text-ellipsis m-b-15">
+                    <!-- <span class="text-xs">1</span> <span class="text-muted"> open tasks, </span>
+                      <span class="text-xs">9</span> <span class="text-muted"> tasks completed</span> -->
+                  </small>
+                  <p class="">
+                    <b>{{this.fishPondHealth.growthInWorkforce}}</b>
+                  </p>
+
+                  <p class="m-b-5">Progress <span class="text-success pull-right">100%</span></p>
+                  <div class="progress progress-xs m-b-0">
+                    <div class="progress-bar progress-bar-success" role="progressbar" tooltip="{{this.fishPondHealth.profitability}}%" title="{{this.fishPondHealth.profitability}}%"
+                      style="width: 100%"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-sm-4">
+                <div class="card-box project-box">
+                  <div class="dropdown profile-action">
+                    <a href="javascript:" class="action-icon dropdown-toggle" data-toggle="dropdown"
+                      aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+                    <ul class="dropdown-menu pull-right">
+                      <li><a href="javascript:" data-toggle="modal" data-target="#edit_project"><i
+                            class="fa fa-pencil m-r-5"></i>
+                          Edit</a></li>
+                      <li><a href="javascript:" data-toggle="modal" data-target="#delete_project"><i
+                            class="fa fa-trash-o m-r-5"></i>
+                          Delete</a></li>
+                    </ul>
+                  </div>
+                  <h4 class="project-title"><a href="javascript:">Growth Production Units</a></h4>
+                  <small class="block text-ellipsis m-b-15">
+                    <!-- <span class="text-xs">1</span> <span class="text-muted"> open tasks, </span>
+                      <span class="text-xs">9</span> <span class="text-muted"> tasks completed</span> -->
+                  </small>
+                  <p class="">
+                    <b>{{this.fishPondHealth.growthInProductionUnits}}</b>
+                  </p>
+
+                  <p class="m-b-5">Progress <span class="text-success pull-right">10%</span></p>
+                  <div class="progress progress-xs m-b-0">
+                    <div class="progress-bar progress-bar-success" role="progressbar" tooltip="{{this.fishPondHealth.profitability}}%" title="{{this.fishPondHealth.profitability}}%"
+                      style="width: 10%"></div>
+                  </div>
+                </div>
+              </div>
+              <!-- <div class="col-lg-3 col-sm-4">
                   <div class="card-box project-box">
                     <div class="dropdown profile-action">
                       <a href="javascript:" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i
@@ -341,10 +370,12 @@
                       <div class="progress-bar progress-bar-success" role="progressbar" tooltip="40%" title="40%" style="width: 40%"></div>
                     </div>
                   </div>
-                </div>
-              </div>
+                </div> -->
+
             </div>
-            <div id="tasks" class="tab-pane fade">
+          </div>
+
+          <!-- <div id="tasks" class="tab-pane fade">
               <div class="project-task">
                 <div class="tabbable">
                   <ul class="nav nav-tabs nav-tabs-top nav-justified m-b-0">
@@ -615,9 +646,10 @@
   
                 </div>
               </div>
-            </div>
-          </div>
+            </div> -->
+
         </div>
       </div>
     </div>
-    </div>
+  </div>
+</div>

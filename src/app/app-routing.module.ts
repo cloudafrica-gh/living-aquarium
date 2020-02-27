@@ -25,7 +25,8 @@ const routes: Routes = [
   },
   {
     path: 'dashboard',
-    loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule)
+    loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule),
+    canActivate: [AuthGuard]
   },
   {
     path: 'ponds',
@@ -35,11 +36,11 @@ const routes: Routes = [
     path: 'auth',
     loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)
   },
-  { path: 'allponds', component: ClientComponent },
+  { path: 'allponds', component: ClientComponent, canActivate: [AuthGuard] },
   { path: 'clients/edit', component: ClientDetailsComponent },
   { path: 'clients/profile/details', component: ClientProfileDetailsComponent },
   { path: 'clients/profile/edit', component: ClientProfileEditComponent },
-  { path: 'allusers', component: UsersComponent },
+  { path: 'allusers', component: UsersComponent, canActivate: [AuthGuard] },
   { path: 'myponds', component: MyPondsComponent },
   { path: '**', redirectTo: 'auth/login' }
 ];
