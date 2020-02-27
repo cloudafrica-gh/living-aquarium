@@ -28,6 +28,9 @@ import { DafabetComponent } from './reports/dafabet/dafabet.component';
 import { UsersComponent } from './users/users.component';
 import { MyPondsComponent } from './ponds/myponds.component';
 import { ClientComponent } from './clients/client/client.component';
+import { ClientDetailsComponent } from './clients/client-details/client-details.component';
+import { ClientProfileDetailsComponent } from './clients/client-profile-details/client-profile-details.component';
+import { ClientProfileEditComponent } from './clients/client-profile-edit/client-profile-edit.component';
 
 enableProdMode();
 
@@ -42,7 +45,10 @@ enableProdMode();
     DafabetComponent,
     UsersComponent,
     MyPondsComponent,
-    ClientComponent
+    ClientComponent,
+    ClientDetailsComponent,
+    ClientProfileDetailsComponent,
+    ClientProfileEditComponent
   ],
   imports: [
     BrowserModule,

@@ -40,14 +40,12 @@ export class AuthService {
   }
   public logout() {
     localStorage.clear();
-    // this.router.navigate(['/auth/login']);
+    // this.router.navigate (['/auth/login']);
 
   }
 
-
   public getUserProfile(): Observable<any> {
-    return this.http
-      .get(`${this.devServerUrl}/user/getprofile`)
+    return this.http.get(`${this.devServerUrl}/user/getprofile`)
       .pipe(
         tap(_ => this.log(`get user profile >>>>`) ),
         catchError(this.handleError('UserProfile', []))

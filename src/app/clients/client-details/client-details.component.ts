@@ -21,61 +21,58 @@ export class ClientDetailsComponent implements OnInit {
 
   public rows = [];
   public srch = [];
-  
-  public uptC:any;
 
-  uptClientValidation:boolean = false;
+  public uptC: any;
 
-  constructor(private clientService:AppService,private router:Router,private route:ActivatedRoute) { 
+  uptClientValidation: boolean = false;
+
+  constructor(
+    private clientService: AppService,
+    private router: Router,
+    private route: ActivatedRoute
+    ) {
     this.rows = clientService.clients;
     this.srch = [...this.rows];
   }
 
   ngOnInit() {
     this.route.queryParams.subscribe(params => {
-      //console.log(params);
+      // console.log(params);
       this.uptC = [];
-      if(params.id)
-      {
+      if (params.id) {
         var id = params.id;
-        const arr = this.rows.find(function(item, i){
+        const arr = this.rows.find(function(item, i) {
           return item.clientID == id;
         });
-        if(!arr)
-        {
+        if (!arr) {
         this.uptC = {};
         this.router.navigate(['clients']);
         }
-        else
-        {
+        else {
         this.uptC.push(arr);
         this.uptC = this.uptC[0];
-        //console.log('------------' + this.uptC);
+        console.log('------------' + this.uptC);
         }
       }
-      else{
+      else {
         this.router.navigate(['clients']);
       }
-      
-      
     });
   }
 
-  updateClient(f)
-  {
-    //console.log(f.form.value);
+  updateClient(f) {
+    // console.log(f.form.value);
     if (f.invalid === true)
       this.uptClientValidation = true;
-    else 
-    {
+    else {
       this.uptClientValidation = false;
     var id = f.form.value.clientID;
-    //console.log(id);
-    var index = this.rows.findIndex(function(item, i){
+    // console.log(id);
+    var index = this.rows.findIndex(function(item, i) {
       return item.clientID === id
     });
 
-    //console.log(index);
+    // console.log(index);
     if (index > -1) {
         this.rows.splice(index, 1);
     }
