@@ -341,6 +341,33 @@ export class AppService {
       navigationId: 2
     }
   ];
+
+  public fistPondRegisteredUsers = [
+    {
+      userId: '975eafb3-e626-421d-9016-54d744c06ef7',
+      fullName: 'Hanson Peprah',
+      email: 'hanson.peprah@sasghana.com',
+      phoneNumber: '0244588584',
+      farmName: 'Yeb Fishery',
+      location: 'Somanya',
+      aboutFarm: null,
+      noOfPonds: null,
+      noOfHatcheries: null,
+      noOfCages: null
+    },
+    {
+      userId: 'd0fe0006-b0b8-4c9a-bfe5-7d3d56fb08c9',
+      fullName: 'qqq qqq',
+      email: 'qqq',
+      phoneNumber: '0qqq',
+      farmName: 'qqq',
+      location: 'qwww',
+      aboutFarm: null,
+      noOfPonds: null,
+      noOfHatcheries: null,
+      noOfCages: null
+    }
+  ];
   public clients = [
     {
       firstName: 'John',
@@ -715,16 +742,16 @@ export class AppService {
 
   public myponds = [
     {
-      "id": 1,
-      "userId": 0,
-      "pondName": "test pond",
-      "pondType": "Pond",
-      "cubicSize": 56,
-      "isLargest": 0,
-      "isSmallest": 1,
-      "firstName": "Anderson",
-      "lastName": "Kyeremeh",
-      "farmName": "Yeb Fishery"
+      id: 1,
+      userId: 0,
+      pondName: 'test pond',
+      pondType: 'Pond',
+      cubicSize: 56,
+      isLargest: 0,
+      isSmallest: 1,
+      firstName: 'Anderson',
+      lastName: 'Kyeremeh',
+      farmName: 'Yeb Fishery'
     }
   ];
   public users = [

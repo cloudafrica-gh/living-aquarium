@@ -24,6 +24,15 @@ export class LivingAquariumService {
       );
   }
 
+  getAllRegisterUser(): Observable<any> {
+    return this.http
+    .get(`${this.laURL}/admin/getallusers`)
+    .pipe(
+      tap(_ => this.log(`srv: get all registered users >>>>`) ),
+      catchError(this.handleError('LivingAquarium', []))
+    );
+  }
+
   getAllUserPonds(): Observable<any> {
     return this.http
     .get(`${this.laURL}/admin/getallponds`)
@@ -32,7 +41,6 @@ export class LivingAquariumService {
       catchError(this.handleError('LivingAquarium', []))
     );
   }
-
   getUserFarmPonds(): Observable<any> {
     return this.http.get(`${this.laURL}/admin/farm/getallponds`)
     .pipe(
@@ -40,7 +48,6 @@ export class LivingAquariumService {
       catchError(this.handleError('LivingAquarium', []))
     );
   }
-
   postUserFishPondHealth(pondData: any): Observable<any> {
     console.log('srv: get user fish pond health: ', pondData);
     return this.http.post<any>(`${this.laURL}/admin/pond/fishhealth`, pondData)
