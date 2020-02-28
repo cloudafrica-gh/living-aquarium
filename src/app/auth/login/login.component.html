@@ -12,11 +12,11 @@
         </div>
 
         <form [formGroup]="loginForm" (ngSubmit)="onFormSubmit(loginForm.value)">
-          <div class="form-group form-focus">
+          <div class="form-group">
             <label class="control-label">Username or Email</label>
             <input class="form-control floating" type="text" formControlName="userName">
           </div>
-          <div class="form-group form-focus">
+          <div class="form-group">
             <label class="control-label">Password</label>
             <input class="form-control floating" type="password" formControlName="password">
           </div>

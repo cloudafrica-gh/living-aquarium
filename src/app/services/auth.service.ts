@@ -32,7 +32,8 @@ export class AuthService {
       );
   }
   register(userData: any): Observable<any> {
-    return this.http.post<any>(this.devServerUrl + '/auth/signup', userData)
+    console.log('register user data: ', userData);
+    return this.http.post<any>(this.devServerUrl + '/user/signup', userData)
       .pipe(
         tap(_ => this.log('login')),
         catchError(this.handleError('Register', []))
