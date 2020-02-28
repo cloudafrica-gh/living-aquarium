@@ -45,6 +45,8 @@ export class UsersComponent implements OnInit {
     height: '38px'
   };
 
+  isHidden: boolean = true;
+
   constructor(
     private userService: AppService,
     private laService: LivingAquariumService,
@@ -54,7 +56,7 @@ export class UsersComponent implements OnInit {
   }
 
   ngOnInit() {
-    $('.floating').on('focus blur', function (e) {
+    $('.floating').on('focus blur', function(e) {
       $(this).parents('.form-focus').toggleClass('focused', (e.type === 'focus' || this.value.length > 0));
     }).trigger('blur');
 
@@ -72,7 +74,6 @@ export class UsersComponent implements OnInit {
       'role': '',
       'user_id': 0
     };
-
     this.getAllRegisteredFishPondUsers();
   }
 
@@ -89,7 +90,9 @@ export class UsersComponent implements OnInit {
 
   economicIndicator(data: any) {
     console.log('economic indicator items', data);
+    $('#economic_indicator').modal('hide');
   }
+
   addReset() {
     let randomnumber = Math.floor(Math.random() * 300);
     this.addU = { 'user_id': randomnumber };
@@ -104,6 +107,7 @@ export class UsersComponent implements OnInit {
       this.rows = this.rows;
       $('#add_user').modal('hide');
     }
+
   }
 
   onEdit(item) {
