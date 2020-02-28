@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AppService } from '../app.service';
 import { LivingAquariumService } from '../services/living-aquarium.service';
-import { pipe } from 'rxjs';
-import { tap } from 'rxjs/operators';
+import {IMyDpOptions} from 'mydatepicker';
 
 declare const $: any;
 
@@ -19,9 +18,36 @@ export class UsersComponent implements OnInit {
   public addU: any = {};
   public uptU: any = [];
 
+  public myDatePickerOptionsT: IMyDpOptions = {
+    todayBtnTxt: 'Today',
+    dateFormat: 'dd-mm-yyyy',
+    firstDayOfWeek: 'su',
+    sunHighlight: true,
+    inline: false,
+    height: '48px'
+  };
+
+  public myDatePickerOptionsF: IMyDpOptions = {
+    todayBtnTxt: 'Today',
+    dateFormat: 'dd-mm-yyyy',
+    firstDayOfWeek: 'su',
+    sunHighlight: true,
+    inline: false,
+    height: '48px'
+  };
+
+  public myDatePickerOptions1: IMyDpOptions = {
+    todayBtnTxt: 'Today',
+    dateFormat: 'dd-mm-yyyy',
+    firstDayOfWeek: 'su',
+    sunHighlight: true,
+    inline: false,
+    height: '38px'
+  };
+
   constructor(
     private userService: AppService,
-    private laService: LivingAquariumService
+    private laService: LivingAquariumService,
   ) {
     // this.rows = userService.fistPondRegisteredUsers;
     this.srch = [...this.rows];

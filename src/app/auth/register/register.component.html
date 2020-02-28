@@ -7,11 +7,11 @@
           <a><img src="assets/img/auth-logo.png" alt="Living Aquarium"></a>
         </div>
         <form [formGroup]="registerForm" (ngSubmit)="onFormSubmit(registerForm.value)">
-          <div class="form-group form-focus">
+          <div class="form-group">
             <label class="control-label">First Name</label>
             <input class="form-control floating" type="text" formControlName="firstName">
           </div>
-          <div class="form-group form-focus">
+          <div class="form-group">
             <label class="control-label">Last Name</label>
             <input class="form-control floating" type="text" formControlName="lastName">
           </div>
@@ -25,7 +25,11 @@
           </div>
           <div class="form-group form-focus">
             <label class="control-label">Email</label>
-            <input class="form-control floating" type="text" formControlName="email">
+            <input class="form-control floating" type="email" formControlName="email">
+          </div>
+          <div class="form-group form-focus">
+            <label class="control-label">Farm Name</label>
+            <input class="form-control floating" type="text" formControlName="farmName">
           </div>
           <div class="form-group form-focus">
             <label class="control-label">Password</label>

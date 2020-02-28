@@ -43,7 +43,7 @@ export class RegisterComponent implements OnInit {
   }
 
   onFormSubmit(form: NgForm) {
-    console.log('client register user form >>>>', form);
+    console.log('authCtrl:  register user form >>>>', form);
     this.authService.register(form)
       .subscribe(res => {
         console.log(`register new user resonse ==> ${res}`);
