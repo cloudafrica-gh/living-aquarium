@@ -23,7 +23,7 @@ export class UsersComponent implements OnInit {
     private userService: AppService,
     private laService: LivingAquariumService
   ) {
-    this.rows = userService.fistPondRegisteredUsers;
+    // this.rows = userService.fistPondRegisteredUsers;
     this.srch = [...this.rows];
   }
 
@@ -51,16 +51,19 @@ export class UsersComponent implements OnInit {
   }
 
   getAllRegisteredFishPondUsers() {
-    this.laService.getAllUserPonds()
+    this.laService.getAllRegisterUser()
       .subscribe(res => {
-        // this.rows = res;
-        console.log('all registered users response =>' + this.rows);
+        this.rows = res;
+        console.log('ctrl: all registered users response =>' + this.rows);
       },
         error => {
-          console.log('error all registered users: ', error);
+          console.log('ctrl: error all registered users: ', error);
         });
   }
 
+  economicIndicator(data: any) {
+    console.log('economic indicator items', data);
+  }
   addReset() {
     let randomnumber = Math.floor(Math.random() * 300);
     this.addU = { 'user_id': randomnumber };

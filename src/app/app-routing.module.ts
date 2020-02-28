@@ -36,7 +36,7 @@ const routes: Routes = [
     path: 'auth',
     loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)
   },
-  { path: 'allponds', component: ClientComponent, canActivate: [AuthGuard] },
+  { path: 'allponds', component: ClientComponent},
   { path: 'clients/edit', component: ClientDetailsComponent },
   { path: 'clients/profile/details', component: ClientProfileDetailsComponent },
   { path: 'clients/profile/edit', component: ClientProfileEditComponent },

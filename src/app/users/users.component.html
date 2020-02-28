@@ -6,9 +6,10 @@
         <h4 class="page-title">Users</h4>
       </div>
       <div class="col-xs-8 text-right m-b-30">
-        <a href="javascript:" class="btn btn-primary rounded" data-toggle="modal" data-target="#add_user"><i
-            class="fa fa-plus"></i>
-          Add User</a>
+        <!-- <a href="javascript:" class="btn btn-primary rounded" data-toggle="modal" data-target="#add_user">
+          <i class="fa fa-plus"></i>
+          Add User
+        </a> -->
       </div>
     </div>
 
@@ -55,14 +56,14 @@
                 <th style="width: 20%">
                   <mfDefaultSorter by="user_id">Name</mfDefaultSorter>
                 </th>
-                <th style="width: 20%">
+                <th style="width: 15%">
                   <mfDefaultSorter by="fullName">Fullname</mfDefaultSorter>
                 </th>
-                <th style="width: 20%">
+                <th style="width: 10%">
                   <mfDefaultSorter by="email">Email</mfDefaultSorter>
                 </th>
 
-                <th style="width: 20%">
+                <th style="width: 15%">
                   <mfDefaultSorter by="phoneNumber">Phone number</mfDefaultSorter>
                 </th>
                 <th style="width: 5%">
@@ -80,6 +81,7 @@
                 <th style="width: 5%">
                   <mfDefaultSorter by="noOfCages">No ofCages</mfDefaultSorter>
                 </th>
+                <th></th>
               </tr>
             </thead>
             <tbody>
@@ -102,7 +104,11 @@
                 <td>{{item.aboutFarm}}</td>
                 <td>{{item.noOfPonds}}</td>
                 <td>{{item.noOfCages}}</td>
-
+                <td>
+                  <button (click)="economicIndicator(item)">
+                     Economic Indicator
+                  </button>
+                </td>
                 <!-- <td class="text-right">
                   <div class="dropdown">
                     <a href="javascript:" class="action-icon dropdown-toggle" data-toggle="dropdown"
