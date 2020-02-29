@@ -105,7 +105,7 @@
                 <td>{{item.noOfPonds}}</td>
                 <td>{{item.noOfCages}}</td>
                 <td>
-                  <button data-toggle="modal" data-target="#economic_indicator">
+                  <button data-toggle="modal" data-target="#economic_indicator" >
                      Economic Indicator
                   </button>
                 </td>
@@ -137,7 +137,6 @@
 
   </div>
 
-
   <div id="economic_indicator" class="modal custom-modal fade" role="dialog">
     <div class="modal-dialog">
       <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -146,28 +145,26 @@
           <h4 class="modal-title">Economic Indicator </h4>
         </div>
         <div class="modal-body">
-          <form class="m-b-30" #addForm="ngForm" (ngSubmit)="economicIndicator(addForm)" novalidate>
+          <form class="m-b-30" [formGroup]="ecoDataForm" (ngSubmit)="economicIndicator(ecoDataForm.value)" novalidate>
             <div class="row">
               <div class="col-md-6">
                 <div class="form-group">
                   <label class="control-label">From <span class="text-danger">*</span></label>
-                  <!-- <input class="form-control" type="text">
-                  <input class="form-control" type="hidden" name="user_id" [(ngModel)]="addU.user_id"
-                    #user_id="ngModel"> -->
-                    <my-date-picker [options]="myDatePickerOptions1" [(ngModel)]="addU.from" name="from" #from="ngModel"
+                    <my-date-picker [options]="myDatePickerOptions1" formControlName="dateFrom" name="dateFrom"
                     required></my-date-picker>                
                   </div>
               </div>
               <div class="col-md-6">
                 <div class="form-group">
                   <label class="control-label">To</label>
-                  <my-date-picker [options]="myDatePickerOptions1" [(ngModel)]="addU.to" name="to" #to="ngModel" required></my-date-picker>
+                  <my-date-picker [options]="myDatePickerOptions1" formControlName="dateTo" name="dateTo" required>
+                  </my-date-picker>
                 </div>
               </div>
               
             </div>
             <div class="table-responsive m-t-15">
-              <table class="table table-striped custom-table">
+              <!-- <table class="table table-striped custom-table">
                 <thead>
                   <tr>
                     <th>Module Permission</th>
@@ -265,7 +262,7 @@
                     </td>
                   </tr>
                 </tbody>
-              </table>
+              </table> -->
             </div>
             <div class="m-t-20 text-center">
               <button class="btn btn-primary" type="submit">Calculate</button>
@@ -275,6 +272,46 @@
       </div>
     </div>
   </div>
+
+<!-- 
+  <div id="economic_indicator" class="modal custom-modal fade" role="dialog">
+    <div class="modal-dialog">
+      <button type="button" class="close" data-dismiss="modal">&times;</button>
+      <div class="modal-content modal-lg">
+        <div class="modal-header">
+          <h4 class="modal-title">Economic Indicator </h4>
+        </div>
+        <div class="modal-body">
+          <form class="m-b-30" #ecoDataForm="ngForm" (ngSubmit)="economicIndicator(ecoDataForm)" novalidate>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label class="control-label">From <span class="text-danger">*</span></label>
+                    <my-date-picker [options]="myDatePickerOptions1" [(ngModel)]="ecoData.dataFrom" name="dateFrom" #dateFrom="ngModel"
+                    required></my-date-picker>                
+                  </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label class="control-label">To</label>
+                  <my-date-picker [options]="myDatePickerOptions1" [(ngModel)]="ecoData.dateTo" name="dateTo" #dateTo="ngModel" required>
+                  </my-date-picker>
+                </div>
+              </div>
+              
+            </div>
+            <div class="table-responsive m-t-15">
+     
+            </div>
+            <div class="m-t-20 text-center">
+              <button class="btn btn-primary" type="submit">Calculate</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
   <div id="add_user" class="modal custom-modal fade" role="dialog">
     <div class="modal-dialog">
       <button type="button" class="close" data-dismiss="modal">&times;</button>

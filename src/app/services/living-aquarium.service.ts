@@ -32,7 +32,6 @@ export class LivingAquariumService {
       catchError(this.handleError('LivingAquarium', []))
     );
   }
-
   getAllUserPonds(): Observable<any> {
     return this.http
     .get(`${this.laURL}/admin/getallponds`)
@@ -62,6 +61,14 @@ export class LivingAquariumService {
         tap(_ => this.log(`srv: user fish pond production data : ${_}`)),
         catchError(this.handleError('LivingAquarium', []))
       );
+  }
+
+  calculateEconomicIndicator(ecoData: any): Observable<any> {
+    return this.http.post<any>(this.laURL + '/admin/farm/economicindicators', ecoData)
+    .pipe(
+      tap(_ => this.log(`ecoData srv: user economic indicator : ${_}`)),
+      catchError(this.handleError('LivingAquarium', []))
+    );
   }
 
   private handleError<T>(operation = 'operation', result?: T) {

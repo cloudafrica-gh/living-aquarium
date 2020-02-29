@@ -2,7 +2,6 @@
   <div class="sidebar-inner slimscroll-wrap" slimScroll [options]="opts">
     <div id="sidebar-menu" class="sidebar-menu">
       <ul *ngIf="homeView">
-
         <li class="submenu">
           <a routerLink="/dashboard" [ngClass]="url === 'reports'? 'subdrop' : 'null'"><i class="la la-rocket"></i> 
             <span>Admin Dashbboard </span> <span class="menu-arrow"></span>
@@ -10,12 +9,12 @@
           <ul class="list-unstyled" [ngClass]="url === 'reports'? 'submenu-block' : 'dsply-none'">
             <li>
               <a routerLink="/allponds" [ngClass]="url2 === 'dafabet' ? 'active' : 'null'">
-                <em>all </em> Ponds 
+                All Ponds 
               </a>
             </li>
             <li>
               <a routerLink="/allusers" [ngClass]="url2 === 'users' ? 'active' : 'null'">
-                <em>all </em> Users 
+                All Users 
               </a>
             </li>
           </ul>
@@ -32,21 +31,18 @@
           </a>
         </li> -->
 
-        <!-- <li class="submenu">
-          <a href="javascript:" [ngClass]="url === 'reports'? 'subdrop' : 'null'"><i class="la la-rocket"></i> 
-            <span>User Admin </span> <span class="menu-arrow"></span>
+        <li class="submenu">
+          <a routerLink="/dashboard/admin" [ngClass]="url === 'reports'? 'subdrop' : 'null'"><i class="la la-users"></i> 
+            <span>User Dashboard </span> <span class="menu-arrow"></span>
           </a>
           <ul class="list-unstyled" [ngClass]="url === 'reports'? 'submenu-block' : 'dsply-none'">
             <li>
-              <a routerLink="/myponds" [ngClass]="url2 === 'dafabet' ? 'active' : 'null'">My Ponds </a>
+              <a routerLink="/myponds" [ngClass]="url2 === 'myponds' ? 'active' : 'null'">My Ponds </a>
             </li>
             <li>
-              <a routerLink="/users" [ngClass]="url2 === 'users' ? 'active' : 'null'">Users </a>
-            </li>
-            <li>
-              <a routerLink="globalpay" [ngClass]="url2 === 'globalpay' ? 'active': 'null'"> Economic Indicator</a>
+              <a routerLink="/myponds" [ngClass]="url2 === 'globalpay' ? 'active': 'null'">Economic Indicator</a>
           </ul>
-        </li> -->
+        </li>
 
         <li class="submenu">
           <a href="javascript:" [ngClass]="url === 'reports'? 'subdrop' : 'null'"><i class="la la-pie-chart"></i> <span>

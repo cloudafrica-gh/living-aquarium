@@ -98,7 +98,7 @@ export class ClientComponent implements OnInit {
   }
 
   addClient(f) {
-    //console.log(f.form.value);
+    // console.log(f.form.value);
     if (f.invalid === true)
       this.addClientValidation = true;
     else {

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AppService } from '../app.service';
 import { LivingAquariumService } from '../services/living-aquarium.service';
 import {IMyDpOptions} from 'mydatepicker';
+import { FormControl, FormGroupDirective, FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 
 declare const $: any;
 
@@ -20,7 +21,7 @@ export class UsersComponent implements OnInit {
 
   public myDatePickerOptionsT: IMyDpOptions = {
     todayBtnTxt: 'Today',
-    dateFormat: 'dd-mm-yyyy',
+    dateFormat: 'yyyy-mm-dd',
     firstDayOfWeek: 'su',
     sunHighlight: true,
     inline: false,
@@ -29,7 +30,7 @@ export class UsersComponent implements OnInit {
 
   public myDatePickerOptionsF: IMyDpOptions = {
     todayBtnTxt: 'Today',
-    dateFormat: 'dd-mm-yyyy',
+    dateFormat: 'yyyy-mm-dd',
     firstDayOfWeek: 'su',
     sunHighlight: true,
     inline: false,
@@ -38,24 +39,33 @@ export class UsersComponent implements OnInit {
 
   public myDatePickerOptions1: IMyDpOptions = {
     todayBtnTxt: 'Today',
-    dateFormat: 'dd-mm-yyyy',
+    dateFormat: 'yyyy-mm-dd',
     firstDayOfWeek: 'su',
     sunHighlight: true,
     inline: false,
     height: '38px'
   };
-
+  ecoData: any = {};
   isHidden: boolean = true;
+  ecoDataForm: FormGroup;
+  dateFrom: '';
+  dateTo = '';
 
   constructor(
+    private formBuilder: FormBuilder,
     private userService: AppService,
-    private laService: LivingAquariumService,
+    private laService: LivingAquariumService
   ) {
     // this.rows = userService.fistPondRegisteredUsers;
     this.srch = [...this.rows];
   }
 
   ngOnInit() {
+    this.ecoDataForm = this.formBuilder.group({
+      dateFrom: [null],
+      dateTo: [null]
+    });
+
     $('.floating').on('focus blur', function(e) {
       $(this).parents('.form-focus').toggleClass('focused', (e.type === 'focus' || this.value.length > 0));
     }).trigger('blur');
@@ -67,12 +77,17 @@ export class UsersComponent implements OnInit {
       'role': '',
       'user_id': 0
     };
+
     this.uptU = {
       'user_name': '',
       'email': '',
       'company': '',
       'role': '',
       'user_id': 0
+    };
+    this.ecoData = {
+      dateFrom: '',
+      dateTo: ''
     };
     this.getAllRegisteredFishPondUsers();
   }
@@ -88,10 +103,25 @@ export class UsersComponent implements OnInit {
         });
   }
 
-  economicIndicator(data: any) {
-    console.log('economic indicator items', data);
+  economicIndicator(f: any) {
+    console.log('economic indicator items', f);
+    console.log('economic indicator items', f.dateFrom.formatted);
+    console.log('economic indicator items', f.dateTo.formatted);
+    if (f.invalid === false) {
+    }
     $('#economic_indicator').modal('hide');
+
   }
+
+ onFormSubmit(form: NgForm) {
+  console.log('ecoData form ===>', form);
+  // console.log('ecoData form ===>', form.dateFrom.formatted);
+  // console.log('ecoData form ===>', form.dateFrom.formatted);
+  console.log('ecoData form ===>', form);
+
+
+  // $('#economic_indicator').modal('hide');
+ }
 
   addReset() {
     let randomnumber = Math.floor(Math.random() * 300);
