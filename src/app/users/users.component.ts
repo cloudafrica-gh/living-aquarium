@@ -28,7 +28,6 @@ export class UsersComponent implements OnInit {
     inline: false,
     height: '48px'
   };
-
   public myDatePickerOptionsF: IMyDpOptions = {
     todayBtnTxt: 'Today',
     dateFormat: 'yyyy-mm-dd',
@@ -37,7 +36,6 @@ export class UsersComponent implements OnInit {
     inline: false,
     height: '48px'
   };
-
   public myDatePickerOptions1: IMyDpOptions = {
     todayBtnTxt: 'Today',
     dateFormat: 'yyyy-mm-dd',

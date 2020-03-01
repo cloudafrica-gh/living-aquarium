@@ -99,7 +99,7 @@ export class ClientComponent implements OnInit {
       const addPondResponse = res;
       console.log('ctr: fishPond production data response ==>', JSON.stringify(addPondResponse));
       $('#add_pond').modal('hide');
-      alert(addPondResponse);
+      // alert(JSON.stringify(addPondResponse));
     }, error => {
       console.log(`ctr: error posting fishPond production data: ${error}`);
     });

@@ -5,7 +5,7 @@
         <h4 class="page-title">My Ponds</h4>
       </div>
       <div class="col-xs-8 text-right m-b-30">
-        <a href="javascript:" class="btn btn-primary rounded" data-toggle="modal" data-target="#add_user"><i
+        <a href="javascript:" class="btn btn-primary rounded" data-toggle="modal" data-target="#add_pond"><i
             class="fa fa-plus"></i>
           Add Pond</a>
       </div>
@@ -107,9 +107,13 @@
 
                 </td> -->
                 <td>
-                  <button>Fish health</button>
-                  <button>Production data</button>
+                  <button (click)="fishPondHealth(item)">Fish Health</button>
+                  <button (click)="fishPondProductionData(item)">Production Data</button>
+                  <button data-toggle="modal" data-target="#economic_indicator" >
+                    Economic Indicator
+                 </button>                
                 </td>
+
                 <!-- <td class="text-right">
                   <div class="dropdown">
                     <a href="javascript:" class="action-icon dropdown-toggle" data-toggle="dropdown"
@@ -137,6 +141,124 @@
     </div>
   </div>
 
+
+  <div id="economic_indicator" class="modal custom-modal fade" role="dialog">
+    <div class="modal-dialog">
+      <button type="button" class="close" data-dismiss="modal">&times;</button>
+      <div class="modal-content modal-lg">
+        <div class="modal-header">
+          <h4 class="modal-title">Economic Indicator </h4>
+        </div>
+        <div class="modal-body">
+          <form class="m-b-30" [formGroup]="ecoDataForm" (ngSubmit)="economicIndicator(ecoDataForm.value)" novalidate>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label class="control-label">From <span class="text-danger">*</span></label>
+                    <my-date-picker [options]="myDatePickerOptions1" formControlName="dateFrom" name="dateFrom"
+                    required></my-date-picker>                
+                  </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label class="control-label">To</label>
+                  <my-date-picker [options]="myDatePickerOptions1" formControlName="dateTo" name="dateTo" required>
+                  </my-date-picker>
+                </div>
+              </div>
+              <div class="col-md-6" hidden>
+                <div class="form-group">
+                  <label class="control-label">UserId</label>
+                  <input class="form-control" type="text" name="userId" formControlName="userId" name="userId">
+                </div>
+              </div>
+            </div>
+  
+            <div class="m-t-20 text-center">
+              <button class="btn btn-primary" type="submit">Calculate</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="add_pond" class="modal custom-modal fade" role="dialog">
+    <div class="modal-dialog">
+      <button type="button" class="close" data-dismiss="modal">&times;</button>
+      <div class="modal-content modal-lg">
+        <div class="modal-header">
+          <h4 class="modal-title">Add User Pond</h4>
+        </div>
+        <div class="modal-body">
+          <div class="m-b-30">
+            <form #addPond="ngForm" (ngSubmit)="addUserPond(addForm)" novalidate>
+              <div class="row">
+               
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label class="control-label">Pond Name <span class="text-danger">*</span></label>
+                    <input class="form-control" type="text" [(ngModel)]="addC.pondName" name="pondName"
+                      #pondName="ngModel" required>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label class="control-label">Pond Type</label>
+                    <input class="form-control" type="text" [(ngModel)]="addC.pondType" name="pondType"
+                      #pondType="ngModel" required>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label class="control-label">Cubic Size <span class="text-danger">*</span></label>
+                    <input class="form-control" type="text" [(ngModel)]="addC.cubicSize" name="cubicSize"
+                      #cubicSize="ngModel" required>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label class="control-label">isLargest <span class="text-danger m-l-5">*</span></label>
+                    <select class="select floating form-control" [(ngModel)]="addC.isLargest" name="isLargest"
+                    #isLargest="ngModel">
+                      <option value="true">True</option>
+                      <option value="false">False</option>
+                    </select>
+                  </div>
+                 
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label class="control-label">isSmallest <span class="text-danger">*</span></label>
+                    <select class="select floating form-control" [(ngModel)]="addC.isSmallest" name="isSmallest"
+                    #isSmallest="ngModel">
+                      <option value="true">True</option>
+                      <option value="false">False</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-md-6" hidden>
+                  <div class="form-group">
+                    <label class="control-label">UserId <span class="text-danger">*</span></label>
+                    <input class="form-control" type="hidden" [(ngModel)]="addC.userId" name="userId"
+                      #userId="ngModel" required >
+                  </div>
+                </div>
+                
+              </div>
+             
+              <div class="m-t-20 text-center">
+                <div *ngIf="addClientValidation" class="alert alert-info m-t-10">
+                  <strong>Warning!</strong> Must Fill all Mandatory Fields.
+                </div>
+                <button class="btn btn-primary" type="submit">Add new pond</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <div id="add_user" class="modal custom-modal fade" role="dialog">
     <div class="modal-dialog">
