@@ -29,6 +29,7 @@ export class ClientComponent implements OnInit {
   public srch = [];
 
   public addC: any = {};
+  public addPond: any = {};
   public uptC = [];
   public viewP = [];
   public uptP = [];
@@ -44,7 +45,7 @@ export class ClientComponent implements OnInit {
   }
 
   ngOnInit() {
-    $('.floating').on('focus blur', function (e) {
+    $('.floating').on('focus blur', function(e) {
       $(this).parents('.form-focus').toggleClass('focused', (e.type === 'focus' || this.value.length > 0));
     }).trigger('blur');
 
@@ -91,6 +92,19 @@ export class ClientComponent implements OnInit {
       });
   }
 
+  addUserPond(f) {
+    console.log('add user pond form: ', f.form.value);
+    this.laService.postUserPond(f.form.value)
+    .subscribe(res => {
+      const addPondResponse = res;
+      console.log('ctr: fishPond production data response ==>', JSON.stringify(addPondResponse));
+      $('#add_pond').modal('hide');
+      alert(addPondResponse);
+    }, error => {
+      console.log(`ctr: error posting fishPond production data: ${error}`);
+    });
+  }
+
   addReset() {
     let randomnumber = Math.floor(Math.random() * 99);
     this.addC = { 'clientID': randomnumber };
@@ -99,7 +113,7 @@ export class ClientComponent implements OnInit {
 
   addClient(f) {
     // console.log(f.form.value);
-    if (f.invalid === true)
+    if(f.invalid === true)
       this.addClientValidation = true;
     else {
       this.addClientValidation = false;

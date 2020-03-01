@@ -40,6 +40,13 @@ export class LivingAquariumService {
       catchError(this.handleError('LivingAquarium', []))
     );
   }
+  postUserPond(pondData: any): Observable<any> {
+    return this.http.post<any>(`${this.laURL}/user/addpond`, pondData)
+    .pipe(
+      tap(_ => this.log(`add pond srv: post user pond >>>>`) ),
+      catchError(this.handleError('LivingAquarium', []))
+    );
+  }
   getUserFarmPonds(): Observable<any> {
     return this.http.get(`${this.laURL}/admin/farm/getallponds`)
     .pipe(

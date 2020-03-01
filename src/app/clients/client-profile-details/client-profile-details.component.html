@@ -109,7 +109,6 @@
                   </div>
                 </div>
               </div>
-
               <div class="col-lg-3 col-sm-4">
                 <div class="card-box project-box">
                   <div class="dropdown profile-action">
@@ -375,278 +374,252 @@
             </div>
           </div>
 
-          <!-- <div id="tasks" class="tab-pane fade">
-              <div class="project-task">
-                <div class="tabbable">
-                  <ul class="nav nav-tabs nav-tabs-top nav-justified m-b-0">
-                    <li class="active"><a href="#all_tasks" data-toggle="tab" aria-expanded="true">All Tasks</a></li>
-                    <li><a href="#pending_tasks" data-toggle="tab" aria-expanded="false">Pending Tasks</a></li>
-                    <li><a href="#completed_tasks" data-toggle="tab" aria-expanded="false">Completed Tasks</a></li>
-                  </ul>
-                  <div class="tab-content">
-                    <div class="tab-pane active" id="all_tasks">
-                      <div class="task-wrapper">
-                        <div class="task-list-container">
-                          <div class="task-list-body">
-                            <ul id="task-list">
-                              <li class="task">
-                                <div class="task-container">
-                                  <span class="task-action-btn task-check">
-                                    <span class="action-circle large complete-btn" title="Mark Complete">
-                                      <i class="material-icons">check</i>
-                                    </span>
-                                  </span>
-                                  <span class="task-label" contenteditable="true">Patient appointment booking</span>
-                                  <span class="task-action-btn task-btn-right">
-                                    <span class="action-circle large" title="Assign">
-                                      <i class="material-icons">person_add</i>
-                                    </span>
-                                    <span class="action-circle large delete-btn" title="Delete Task">
-                                      <i class="material-icons">delete</i>
-                                    </span>
-                                  </span>
-                                </div>
-                              </li>
-                              <li class="task">
-                                <div class="task-container">
-                                  <span class="task-action-btn task-check">
-                                    <span class="action-circle large complete-btn" title="Mark Complete">
-                                      <i class="material-icons">check</i>
-                                    </span>
-                                  </span>
-                                  <span class="task-label" contenteditable="true">Appointment booking with
-                                    payment gateway</span>
-                                  <span class="task-action-btn task-btn-right">
-                                    <span class="action-circle large" title="Assign">
-                                      <i class="material-icons">person_add</i>
-                                    </span>
-                                    <span class="action-circle large delete-btn" title="Delete Task">
-                                      <i class="material-icons">delete</i>
-                                    </span>
-                                  </span>
-                                </div>
-                              </li>
-                              <li class="completed task">
-                                <div class="task-container">
-                                  <span class="task-action-btn task-check">
-                                    <span class="action-circle large complete-btn" title="Mark Complete">
-                                      <i class="material-icons">check</i>
-                                    </span>
-                                  </span>
-                                  <span class="task-label">Doctor available module</span>
-                                  <span class="task-action-btn task-btn-right">
-                                    <span class="action-circle large" title="Assign">
-                                      <i class="material-icons">person_add</i>
-                                    </span>
-                                    <span class="action-circle large delete-btn" title="Delete Task">
-                                      <i class="material-icons">delete</i>
-                                    </span>
-                                  </span>
-                                </div>
-                              </li>
-                              <li class="task">
-                                <div class="task-container">
-                                  <span class="task-action-btn task-check">
-                                    <span class="action-circle large complete-btn" title="Mark Complete">
-                                      <i class="material-icons">check</i>
-                                    </span>
-                                  </span>
-                                  <span class="task-label" contenteditable="true">Patient and Doctor video
-                                    conferencing</span>
-                                  <span class="task-action-btn task-btn-right">
-                                    <span class="action-circle large" title="Assign">
-                                      <i class="material-icons">person_add</i>
-                                    </span>
-                                    <span class="action-circle large delete-btn" title="Delete Task">
-                                      <i class="material-icons">delete</i>
-                                    </span>
-                                  </span>
-                                </div>
-                              </li>
-                              <li class="task">
-                                <div class="task-container">
-                                  <span class="task-action-btn task-check">
-                                    <span class="action-circle large complete-btn" title="Mark Complete">
-                                      <i class="material-icons">check</i>
-                                    </span>
-                                  </span>
-                                  <span class="task-label" contenteditable="true">Private chat module</span>
-                                  <span class="task-action-btn task-btn-right">
-                                    <span class="action-circle large" title="Assign">
-                                      <i class="material-icons">person_add</i>
-                                    </span>
-                                    <span class="action-circle large delete-btn" title="Delete Task">
-                                      <i class="material-icons">delete</i>
-                                    </span>
-                                  </span>
-                                </div>
-                              </li>
-                              <li class="task">
-                                <div class="task-container">
-                                  <span class="task-action-btn task-check">
-                                    <span class="action-circle large complete-btn" title="Mark Complete">
-                                      <i class="material-icons">check</i>
-                                    </span>
-                                  </span>
-                                  <span class="task-label" contenteditable="true">Patient Profile add</span>
-                                  <span class="task-action-btn task-btn-right">
-                                    <span class="action-circle large" title="Assign">
-                                      <i class="material-icons">person_add</i>
-                                    </span>
-                                    <span class="action-circle large delete-btn" title="Delete Task">
-                                      <i class="material-icons">delete</i>
-                                    </span>
-                                  </span>
-                                </div>
-                              </li>
-                            </ul>
-                          </div>
-                          <div class="task-list-footer">
-                            <div class="new-task-wrapper">
-                              <textarea id="new-task" placeholder="Enter new task here. . ."></textarea>
-                              <span class="error-message hidden">You need to enter a task first</span>
-                              <span class="add-new-task-btn btn" id="add-task">Add Task</span>
-                              <span class="cancel-btn btn" id="close-task-panel">Close</span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="tab-pane" id="pending_tasks">
-                      <div class="task-wrapper">
-                        <div class="task-list-container">
-                          <div class="task-list-body">
-                            <ul id="task-list">
-                              <li class="task">
-                                <div class="task-container">
-                                  <span class="task-action-btn task-check">
-                                    <span class="action-circle large complete-btn" title="Mark Complete">
-                                      <i class="material-icons">check</i>
-                                    </span>
-                                  </span>
-                                  <span class="task-label" contenteditable="true">Patient appointment booking</span>
-                                  <span class="task-action-btn task-btn-right">
-                                    <span class="action-circle large" title="Assign">
-                                      <i class="material-icons">person_add</i>
-                                    </span>
-                                    <span class="action-circle large delete-btn" title="Delete Task">
-                                      <i class="material-icons">delete</i>
-                                    </span>
-                                  </span>
-                                </div>
-                              </li>
-                              <li class="task">
-                                <div class="task-container">
-                                  <span class="task-action-btn task-check">
-                                    <span class="action-circle large complete-btn" title="Mark Complete">
-                                      <i class="material-icons">check</i>
-                                    </span>
-                                  </span>
-                                  <span class="task-label" contenteditable="true">Appointment booking with
-                                    payment gateway</span>
-                                  <span class="task-action-btn task-btn-right">
-                                    <span class="action-circle large" title="Assign">
-                                      <i class="material-icons">person_add</i>
-                                    </span>
-                                    <span class="action-circle large delete-btn" title="Delete Task">
-                                      <i class="material-icons">delete</i>
-                                    </span>
-                                  </span>
-                                </div>
-                              </li>
-                              <li class="task">
-                                <div class="task-container">
-                                  <span class="task-action-btn task-check">
-                                    <span class="action-circle large complete-btn" title="Mark Complete">
-                                      <i class="material-icons">check</i>
-                                    </span>
-                                  </span>
-                                  <span class="task-label" contenteditable="true">Patient and Doctor video
-                                    conferencing</span>
-                                  <span class="task-action-btn task-btn-right">
-                                    <span class="action-circle large" title="Assign">
-                                      <i class="material-icons">person_add</i>
-                                    </span>
-                                    <span class="action-circle large delete-btn" title="Delete Task">
-                                      <i class="material-icons">delete</i>
-                                    </span>
-                                  </span>
-                                </div>
-                              </li>
-                              <li class="task">
-                                <div class="task-container">
-                                  <span class="task-action-btn task-check">
-                                    <span class="action-circle large complete-btn" title="Mark Complete">
-                                      <i class="material-icons">check</i>
-                                    </span>
-                                  </span>
-                                  <span class="task-label" contenteditable="true">Private chat module</span>
-                                  <span class="task-action-btn task-btn-right">
-                                    <span class="action-circle large" title="Assign">
-                                      <i class="material-icons">person_add</i>
-                                    </span>
-                                    <span class="action-circle large delete-btn" title="Delete Task">
-                                      <i class="material-icons">delete</i>
-                                    </span>
-                                  </span>
-                                </div>
-                              </li>
-                              <li class="task">
-                                <div class="task-container">
-                                  <span class="task-action-btn task-check">
-                                    <span class="action-circle large complete-btn" title="Mark Complete">
-                                      <i class="material-icons">check</i>
-                                    </span>
-                                  </span>
-                                  <span class="task-label" contenteditable="true">Patient Profile add</span>
-                                  <span class="task-action-btn task-btn-right">
-                                    <span class="action-circle large" title="Assign">
-                                      <i class="material-icons">person_add</i>
-                                    </span>
-                                    <span class="action-circle large delete-btn" title="Delete Task">
-                                      <i class="material-icons">delete</i>
-                                    </span>
-                                  </span>
-                                </div>
-                              </li>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="tab-pane" id="completed_tasks">
-                      <div class="task-wrapper">
-                        <div class="task-list-container">
-                          <div class="task-list-body">
-                            <ul id="task-list">
-                              <li class="task">
-                                <div class="task-container">
-                                  <span class="task-action-btn task-check">
-                                    <span class="action-circle large complete-btn" title="Mark Complete">
-                                      <i class="material-icons">check</i>
-                                    </span>
-                                  </span>
-                                  <span class="task-label">Doctor available module</span>
-                                  <span class="task-action-btn task-btn-right">
-                                    <span class="action-circle large" title="Assign">
-                                      <i class="material-icons">person_add</i>
-                                    </span>
-                                    <span class="action-circle large delete-btn" title="Delete Task">
-                                      <i class="material-icons">delete</i>
-                                    </span>
-                                  </span>
-                                </div>
-                              </li>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+          <div id="tasks" class="tab-pane fade">
+            <div class="row">
+              <div class="col-lg-3 col-sm-4">
+                <div class="card-box project-box">
+                  <div class="dropdown profile-action">
+                    <a href="javascript:" class="action-icon dropdown-toggle" data-toggle="dropdown"
+                      aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+                    <ul class="dropdown-menu pull-right">
+                      <li><a href="javascript:" data-toggle="modal" data-target="#edit_project"><i
+                            class="fa fa-pencil m-r-5"></i>
+                          Edit</a></li>
+                      <li><a href="javascript:" data-toggle="modal" data-target="#delete_project"><i
+                            class="fa fa-trash-o m-r-5"></i>
+                          Delete</a></li>
+                    </ul>
                   </div>
-  
+                  <h4 class="project-title"><a href="javascript:">FeedConversionRation</a></h4>
+                  <small class="block text-ellipsis m-b-15">
+                    <!-- <span class="text-xs">1</span> <span class="text-muted"> open tasks, </span>
+                      <span class="text-xs">9</span> <span class="text-muted"> tasks completed</span> -->
+                  </small>
+                  <p class="">
+                    <b>{{this.fishPondProductionData.feedConversionRation}}</b>
+                  </p>
+
+                  <p class="m-b-5">Progress <span class="text-success pull-right">30%</span></p>
+                  <div class="progress progress-xs m-b-0">
+                    <div class="progress-bar progress-bar-success" role="progressbar"
+                      tooltip="{{this.fishPondProductionData.feedConversionRation}}%" title="{{this.fishPondProductionData.feedConversionRation}}%"
+                      style="width: 30%"></div>
+                  </div>
                 </div>
               </div>
-            </div> -->
+              <div class="col-lg-3 col-sm-4">
+                <div class="card-box project-box">
+                  <div class="dropdown profile-action">
+                    <a href="javascript:" class="action-icon dropdown-toggle" data-toggle="dropdown"
+                      aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+                    <ul class="dropdown-menu pull-right">
+                      <li><a href="javascript:" data-toggle="modal" data-target="#edit_project"><i
+                            class="fa fa-pencil m-r-5"></i>
+                          Edit</a></li>
+                      <li><a href="javascript:" data-toggle="modal" data-target="#delete_project"><i
+                            class="fa fa-trash-o m-r-5"></i>
+                          Delete</a></li>
+                    </ul>
+                  </div>
+                  <h4 class="project-title"><a href="javascript:">Growth In Workforce</a></h4>
+                  <small class="block text-ellipsis m-b-15">
+                    <!-- <span class="text-xs">1</span> <span class="text-muted"> open tasks, </span>
+                      <span class="text-xs">9</span> <span class="text-muted"> tasks completed</span> -->
+                  </small>
+                  <p class="">
+                    <b>{{this.fishPondProductionData.growthInWorkforce}}</b>
+                  </p>
+
+                  <p class="m-b-5">Progress <span class="text-success pull-right">100%</span></p>
+                  <div class="progress progress-xs m-b-0">
+                    <div class="progress-bar progress-bar-success" role="progressbar" tooltip="{{this.fishPondHealth.profitability}}%" title="{{this.fishPondHealth.profitability}}%"
+                      style="width: 100%"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-sm-4">
+                <div class="card-box project-box">
+                  <div class="dropdown profile-action">
+                    <a href="javascript:" class="action-icon dropdown-toggle" data-toggle="dropdown"
+                      aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+                    <ul class="dropdown-menu pull-right">
+                      <li><a href="javascript:" data-toggle="modal" data-target="#edit_project"><i
+                            class="fa fa-pencil m-r-5"></i>
+                          Edit</a></li>
+                      <li><a href="javascript:" data-toggle="modal" data-target="#delete_project"><i
+                            class="fa fa-trash-o m-r-5"></i>
+                          Delete</a></li>
+                    </ul>
+                  </div>
+                  <h4 class="project-title"><a href="javascript:">Growth Production Units</a></h4>
+                  <small class="block text-ellipsis m-b-15">
+                    <!-- <span class="text-xs">1</span> <span class="text-muted"> open tasks, </span>
+                      <span class="text-xs">9</span> <span class="text-muted"> tasks completed</span> -->
+                  </small>
+                  <p class="">
+                    <b>{{this.fishPondProductionData.growthInProductionUnits}}</b>
+                  </p>
+
+                  <p class="m-b-5">Progress <span class="text-success pull-right">10%</span></p>
+                  <div class="progress progress-xs m-b-0">
+                    <div class="progress-bar progress-bar-success" role="progressbar" tooltip="{{this.fishPondHealth.profitability}}%" title="{{this.fishPondHealth.profitability}}%"
+                      style="width: 10%"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-sm-4">
+                <div class="card-box project-box">
+                  <div class="dropdown profile-action">
+                    <a href="javascript:" class="action-icon dropdown-toggle" data-toggle="dropdown"
+                      aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+                    <ul class="dropdown-menu pull-right">
+                      <li><a href="javascript:" data-toggle="modal" data-target="#edit_project"><i
+                            class="fa fa-pencil m-r-5"></i>
+                          Edit</a></li>
+                      <li><a href="javascript:" data-toggle="modal" data-target="#delete_project"><i
+                            class="fa fa-trash-o m-r-5"></i>
+                          Delete</a></li>
+                    </ul>
+                  </div>
+                  <h4 class="project-title"><a href="javascript:">Sex Reversal Growth Rate</a></h4>
+                  <small class="block text-ellipsis m-b-15">
+                    <!-- <span class="text-xs">1</span> <span class="text-muted"> open tasks, </span>
+                      <span class="text-xs">9</span> <span class="text-muted"> tasks completed</span> -->
+                  </small>
+                  <p class="">
+                    <b>{{this.fishPondProductionData.sexReversalGrowthRate}}</b>
+                  </p>
+
+                  <p class="m-b-5">Progress <span class="text-success pull-right">10%</span></p>
+                  <div class="progress progress-xs m-b-0">
+                    <div class="progress-bar progress-bar-success" role="progressbar" tooltip="{{this.fishPondHealth.profitability}}%" title="{{this.fishPondHealth.profitability}}%"
+                      style="width: 10%"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-sm-4">
+                <div class="card-box project-box">
+                  <div class="dropdown profile-action">
+                    <a href="javascript:" class="action-icon dropdown-toggle" data-toggle="dropdown"
+                      aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+                    <ul class="dropdown-menu pull-right">
+                      <li><a href="javascript:" data-toggle="modal" data-target="#edit_project"><i
+                            class="fa fa-pencil m-r-5"></i>
+                          Edit</a></li>
+                      <li><a href="javascript:" data-toggle="modal" data-target="#delete_project"><i
+                            class="fa fa-trash-o m-r-5"></i>
+                          Delete</a></li>
+                    </ul>
+                  </div>
+                  <h4 class="project-title"><a href="javascript:">Sex Reversal Mortality</a></h4>
+                  <small class="block text-ellipsis m-b-15">
+                    <!-- <span class="text-xs">1</span> <span class="text-muted"> open tasks, </span>
+                      <span class="text-xs">9</span> <span class="text-muted"> tasks completed</span> -->
+                  </small>
+                  <p class="">
+                    <b>{{this.fishPondProductionData.sexReversalMortality}}</b>
+                  </p>
+
+                  <p class="m-b-5">Progress <span class="text-success pull-right">30%</span></p>
+                  <div class="progress progress-xs m-b-0">
+                    <div class="progress-bar progress-bar-success" role="progressbar"
+                      tooltip="{{this.fishPondProductionData.sexReversalMortality}}%" title="{{this.fishPondProductionData.sexReversalMortality}}%"
+                      style="width: 30%"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-sm-4">
+                <div class="card-box project-box">
+                  <div class="dropdown profile-action">
+                    <a href="javascript:" class="action-icon dropdown-toggle" data-toggle="dropdown"
+                      aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+                    <ul class="dropdown-menu pull-right">
+                      <li><a href="javascript:" data-toggle="modal" data-target="#edit_project"><i
+                            class="fa fa-pencil m-r-5"></i>
+                          Edit</a></li>
+                      <li><a href="javascript:" data-toggle="modal" data-target="#delete_project"><i
+                            class="fa fa-trash-o m-r-5"></i>
+                          Delete</a></li>
+                    </ul>
+                  </div>
+                  <h4 class="project-title"><a href="javascript:">sexReversalMortalityRate</a></h4>
+                  <small class="block text-ellipsis m-b-15">
+                    <!-- <span class="text-xs">1</span> <span class="text-muted"> open tasks, </span>
+                      <span class="text-xs">9</span> <span class="text-muted"> tasks completed</span> -->
+                  </small>
+                  <p class="">
+                    <b>{{this.fishPondProductionData.sexReversalMortalityRate}}</b>
+                  </p>
+
+                  <p class="m-b-5">Progress <span class="text-success pull-right">100%</span></p>
+                  <div class="progress progress-xs m-b-0">
+                    <div class="progress-bar progress-bar-success" role="progressbar" tooltip="{{this.fishPondHealth.sexReversalMortalityRate}}%" title="{{this.fishPondHealth.sexReversalMortalityRate}}%"
+                      style="width: 100%"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-sm-4">
+                <div class="card-box project-box">
+                  <div class="dropdown profile-action">
+                    <a href="javascript:" class="action-icon dropdown-toggle" data-toggle="dropdown"
+                      aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+                    <ul class="dropdown-menu pull-right">
+                      <li><a href="javascript:" data-toggle="modal" data-target="#edit_project"><i
+                            class="fa fa-pencil m-r-5"></i>
+                          Edit</a></li>
+                      <li><a href="javascript:" data-toggle="modal" data-target="#delete_project"><i
+                            class="fa fa-trash-o m-r-5"></i>
+                          Delete</a></li>
+                    </ul>
+                  </div>
+                  <h4 class="project-title"><a href="javascript:">Weight Gain At Nursery</a></h4>
+                  <small class="block text-ellipsis m-b-15">
+                    <!-- <span class="text-xs">1</span> <span class="text-muted"> open tasks, </span>
+                      <span class="text-xs">9</span> <span class="text-muted"> tasks completed</span> -->
+                  </small>
+                  <p class="">
+                    <b>{{this.fishPondProductionData.weightGainAtNursery}}</b>
+                  </p>
+
+                  <p class="m-b-5">Progress <span class="text-success pull-right">10%</span></p>
+                  <div class="progress progress-xs m-b-0">
+                    <div class="progress-bar progress-bar-success" role="progressbar" tooltip="{{this.fishPondHealth.weightGainAtNursery}}%" title="{{this.fishPondHealth.weightGainAtNursery}}%"
+                      style="width: 10%"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-sm-4">
+                <div class="card-box project-box">
+                  <div class="dropdown profile-action">
+                    <a href="javascript:" class="action-icon dropdown-toggle" data-toggle="dropdown"
+                      aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+                    <ul class="dropdown-menu pull-right">
+                      <li><a href="javascript:" data-toggle="modal" data-target="#edit_project"><i
+                            class="fa fa-pencil m-r-5"></i>
+                          Edit</a></li>
+                      <li><a href="javascript:" data-toggle="modal" data-target="#delete_project"><i
+                            class="fa fa-trash-o m-r-5"></i>
+                          Delete</a></li>
+                    </ul>
+                  </div>
+                  <h4 class="project-title"><a href="javascript:">Growth Rate At Nursery</a></h4>
+                  <small class="block text-ellipsis m-b-15">
+                    <!-- <span class="text-xs">1</span> <span class="text-muted"> open tasks, </span>
+                      <span class="text-xs">9</span> <span class="text-muted"> tasks completed</span> -->
+                  </small>
+                  <p class="">
+                    <b>{{this.fishPondProductionData.growthRateAtNursery}}</b>
+                  </p>
+
+                  <p class="m-b-5">Progress <span class="text-success pull-right">10%</span></p>
+                  <div class="progress progress-xs m-b-0">
+                    <div class="progress-bar progress-bar-success" role="progressbar" tooltip="{{this.fishPondHealth.growthRateAtNursery}}%" title="{{this.fishPondHealth.growthRateAtNursery}}%"
+                      style="width: 10%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
         </div>
       </div>

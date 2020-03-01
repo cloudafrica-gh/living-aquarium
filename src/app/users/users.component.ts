@@ -3,6 +3,7 @@ import { AppService } from '../app.service';
 import { LivingAquariumService } from '../services/living-aquarium.service';
 import {IMyDpOptions} from 'mydatepicker';
 import { FormControl, FormGroupDirective, FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 declare const $: any;
 
@@ -53,6 +54,7 @@ export class UsersComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
+    private router: Router,
     private userService: AppService,
     private laService: LivingAquariumService
   ) {
@@ -63,7 +65,8 @@ export class UsersComponent implements OnInit {
   ngOnInit() {
     this.ecoDataForm = this.formBuilder.group({
       dateFrom: [null],
-      dateTo: [null]
+      dateTo: [null],
+      userId: [null]
     });
 
     $('.floating').on('focus blur', function(e) {
@@ -87,7 +90,8 @@ export class UsersComponent implements OnInit {
     };
     this.ecoData = {
       dateFrom: '',
-      dateTo: ''
+      dateTo: '',
+      userId: ''
     };
     this.getAllRegisteredFishPondUsers();
   }
@@ -107,9 +111,16 @@ export class UsersComponent implements OnInit {
     console.log('economic indicator items', f);
     console.log('economic indicator items', f.dateFrom.formatted);
     console.log('economic indicator items', f.dateTo.formatted);
-    if (f.invalid === false) {
-    }
-    $('#economic_indicator').modal('hide');
+
+    this.laService.calculateEconomicIndicator(f)
+      .subscribe( res => {
+        this.rows = res;
+        console.log('ctr: economic indicator', this.rows);
+        $('#economic_indicator').modal('hide');
+        this.router.navigateByUrl('/clients/profile/details', { state: this.rows });
+      }, error => {
+        console.log('ctr: error economic indicator', error);
+      });
 
   }
 
