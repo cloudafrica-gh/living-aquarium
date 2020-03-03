@@ -9,46 +9,21 @@
           <i class="fa fa-plus"></i>
           Add Pond</a>
         <div class="view-icons">
-          <a [ngClass]="{active:!allClients}" (click)="allClients=false" class="grid-view btn btn-link"><i
-              class="fa fa-th"></i></a>
-          <a [ngClass]="{active:allClients}" (click)="allClients=true" class="list-view btn btn-link"><i
-              class="fa fa-bars"></i></a>
+          <a [ngClass]="{active:!allClients}" (click)="allClients=false" class="grid-view btn btn-link">
+            <i class="fa fa-th"></i>
+          </a>
+          <a [ngClass]="{active:allClients}" (click)="allClients=true" class="list-view btn btn-link">
+            <i class="fa fa-bars"></i>
+          </a>
         </div>
       </div>
     </div>
-    <!-- <div class="row filter-row">
-      <div class="col-sm-3 col-xs-6">
-        <div class="form-group form-focus">
-          <label class="control-label">Client ID</label>
-          <input type="text" class="form-control floating unit-cost" (input)="searchID($event.target.value)" />
-        </div>
-      </div>
-      <div class="col-sm-3 col-xs-6">
-        <div class="form-group form-focus">
-          <label class="control-label">Client Name</label>
-          <input type="text" class="form-control floating" (input)="searchName($event.target.value)" />
-        </div>
-      </div>
-      <div class="col-sm-3 col-xs-6">
-        <div class="form-group form-focus select-focus">
-          <label class="control-label">Ponds</label>
-          <select class="select floating form-control" (input)="searchCompany($event.target.value)">
-            <option value="">All Ponds</option>
-            <option value="Global Technologies">Global Technologies</option>
-            <option value="Delta Infotech">Delta Infotech</option>
-            <option value="Cream Inc">Cream Inc</option>
-          </select>
-        </div>
-      </div>
-      <div class="col-sm-3 col-xs-6">
-        <a href="javascript:" class="btn btn-success btn-block"> Search </a>
-      </div>
-    </div> -->
     <br>
+
     <div class="row" *ngIf="allClients">
       <div class="col-md-12">
         <div class="table-responsive table-responsive-inherit">
-          <table class="table table-striped custom-table" [mfData]="rows" #mf="mfDataTable" [mfRowsOnPage]="5">
+          <table class="table table-striped custom-table" [mfData]="rows" #mf="mfDataTable" [mfRowsOnPage]="10">
             <thead>
               <th style="width: 5%" class="text-center">
                 <mfDefaultSorter by="id">#</mfDefaultSorter>
@@ -87,41 +62,13 @@
                 <td>{{item.pondType}}</td>
                 <td>{{item.cubicSize}}</td>
                 <td>
-                  <button (click)="fishPondHealth(item)">Fish Health</button>
-                  <button (click)="fishPondProductionData(item)">Production Data</button>
+                  <button class="btn btn-primary" (click)="fishPondHealth(item)">Fish Health</button>
+                  <button class="btn btn-black btn-xs" (click)="fishPondProductionData(item)">Production Data</button>
                 </td>
 
-                <td >
-                 
-                  <!-- <a class="btn btn-white btn-sm rounded dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                    <i class="fa fa-dot-circle-o text-success"></i> {{item.status}} <i class="caret"></i>
-                  </a>
-                  <a class="btn btn-white btn-sm rounded dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                    <i class="fa fa-dot-circle-o text-success"></i> {{item.status}} <i class="caret"></i>
-                  </a> -->
-                  <!-- <div class="dropdown action-label">
-                    <a class="btn btn-white btn-sm rounded dropdown-toggle" data-toggle="dropdown"
-                      aria-expanded="false">
-                      <i class="fa fa-dot-circle-o text-success"></i> {{item.status}} <i class="caret"></i>
-                    </a>
-                    <ul class="dropdown-menu">
-                      <li><a href="javascript:"><i class="fa fa-dot-circle-o text-success"></i> Active</a></li>
-                      <li><a href="javascript:"><i class="fa fa-dot-circle-o text-danger"></i> Inactive</a></li>
-                    </ul>
-                  </div> -->
-                </td>
-                <!-- <td class="text-right">
-                  <div class="dropdown">
-                    <a href="javascript:" class="action-icon dropdown-toggle" data-toggle="dropdown"
-                      aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
-                    <ul class="dropdown-menu pull-right">
-                      <li><a href="javascript:" (click)="onEdit(item)"><i class="fa fa-pencil m-r-5"></i>
-                          Edit</a></li>
-                      <li><a href="javascript:" (click)="onDelete(item)"><i class="fa fa-trash-o m-r-5"></i>
-                          Delete</a></li>
-                    </ul>
-                  </div>
-                </td> -->
+                <td>
+              </td>
+
               </tr>
             </tbody>
             <tfoot>
@@ -135,7 +82,7 @@
         </div>
       </div>
     </div>
-    
+
     <div class="row staff-grid-row" *ngIf="!allClients">
       <div class="col-md-4 col-sm-4 col-xs-6 col-lg-3" *ngFor="let item of rows">
         <div class="profile-widget">
@@ -172,7 +119,7 @@
             <div class="m-b-30">
               <form #addPond="ngForm" (ngSubmit)="addUserPond(addForm)" novalidate>
                 <div class="row">
-                 
+
                   <div class="col-md-6">
                     <div class="form-group">
                       <label class="control-label">Pond Name <span class="text-danger">*</span></label>
@@ -198,18 +145,18 @@
                     <div class="form-group">
                       <label class="control-label">isLargest <span class="text-danger m-l-5">*</span></label>
                       <select class="select floating form-control" [(ngModel)]="addC.isLargest" name="isLargest"
-                      #isLargest="ngModel">
+                        #isLargest="ngModel">
                         <option value="true">True</option>
                         <option value="false">False</option>
                       </select>
                     </div>
-                   
+
                   </div>
                   <div class="col-md-6">
                     <div class="form-group">
                       <label class="control-label">isSmallest <span class="text-danger">*</span></label>
                       <select class="select floating form-control" [(ngModel)]="addC.isSmallest" name="isSmallest"
-                      #isSmallest="ngModel">
+                        #isSmallest="ngModel">
                         <option value="true">True</option>
                         <option value="false">False</option>
                       </select>
@@ -219,12 +166,12 @@
                     <div class="form-group">
                       <label class="control-label">UserId <span class="text-danger">*</span></label>
                       <input class="form-control" type="hidden" [(ngModel)]="addC.userId" name="userId"
-                        #userId="ngModel" required >
+                        #userId="ngModel" required>
                     </div>
                   </div>
-                  
+
                 </div>
-               
+
                 <div class="m-t-20 text-center">
                   <div *ngIf="addClientValidation" class="alert alert-info m-t-10">
                     <strong>Warning!</strong> Must Fill all Mandatory Fields.

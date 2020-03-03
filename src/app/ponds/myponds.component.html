@@ -48,7 +48,7 @@
     <div class="row">
       <div class="col-md-12">
         <div class="table-responsive">
-          <table class="table table-striped custom-table" [mfData]="rows" #mf="mfDataTable" [mfRowsOnPage]="5">
+          <table class="table table-striped custom-table" [mfData]="rows" #mf="mfDataTable" [mfRowsOnPage]="10">
             <thead>
               <tr>
                 <!-- <th style="width: 4%">
@@ -107,9 +107,9 @@
 
                 </td> -->
                 <td>
-                  <button (click)="fishPondHealth(item)">Fish Health</button>
-                  <button (click)="fishPondProductionData(item)">Production Data</button>
-                  <button data-toggle="modal" data-target="#economic_indicator" >
+                  <button class="btn btn-primary btn-sm" (click)="fishPondHealth(item)">Fish Health</button>
+                  <button class="btn btn-danger btn-sm" (click)="fishPondProductionData(item)">Production Data</button>
+                  <button class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#economic_indicator" >
                     Economic Indicator
                  </button>                
                 </td>
