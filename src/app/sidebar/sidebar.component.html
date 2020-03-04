@@ -3,7 +3,8 @@
     <div id="sidebar-menu" class="sidebar-menu">
       <ul *ngIf="homeView">
         <li class="submenu">
-          <a routerLink="/dashboard" [ngClass]="url === 'reports'? 'subdrop' : 'null'"><i class="la la-rocket"></i> 
+          <a routerLink="/dashboard" [ngClass]="url === 'reports'? 'subdrop' : 'null'">
+            <i class="la la-rocket"></i> 
             <span>Admin Dashbboard </span> <span class="menu-arrow"></span>
           </a>
           <ul class="list-unstyled" [ngClass]="url === 'reports'? 'submenu-block' : 'dsply-none'">
@@ -31,7 +32,7 @@
           </a>
         </li> -->
 
-        <li class="submenu">
+        <li class="submenu" *ngIf="isAdmin">
           <a routerLink="/dashboard/admin" [ngClass]="url === 'reports'? 'subdrop' : 'null'"><i class="la la-users"></i> 
             <span>User Dashboard </span> <span class="menu-arrow"></span>
           </a>

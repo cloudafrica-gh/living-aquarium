@@ -24,6 +24,9 @@ export class SidebarComponent implements OnInit {
   callView = false;
   taskView = false;
 
+  public isAdmin: boolean = false;
+  public checkUserRole: string;
+
   constructor(
     private location: Location,
     private router: Router,
@@ -132,6 +135,10 @@ export class SidebarComponent implements OnInit {
         // console.log(event.error);
       }
     });
+
+    this.checkUserRole = localStorage.getItem('role');
+    console.log('checkAdmin role', this.checkUserRole);
+    if (this.checkUserRole === '4') { this.isAdmin = true; }
   }
 
   ngOnInit() {
@@ -154,4 +161,6 @@ export class SidebarComponent implements OnInit {
       $('.slimscroll-wrapper').height(h);
     });
   }
+
+
 }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroupDirective, FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -14,13 +14,14 @@ export class LoginComponent implements OnInit {
   email = '';
   password = '';
   isLoadingResults = false;
+  returnUrl: string;
 
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
+    private route: ActivatedRoute,
     private authService: AuthService,
-  ) {
-  }
+  ) { }
 
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
@@ -31,6 +32,7 @@ export class LoginComponent implements OnInit {
     // if (this.authService.checkLoggedIn) {
     //   this.router.navigate(['/']);
     // }
+    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
   }
 
   onFormSubmit(form: NgForm) {
@@ -44,7 +46,10 @@ export class LoginComponent implements OnInit {
           console.log(`res.token: ${res.token}`);
           console.log(`storing res.token ...`);
           localStorage.setItem('token', res.token);
+          localStorage.setItem('role', res.role);
           // console.log('getToken localstorage ::: ' + localStorage.getItem('token'));
+          console.log('getUserRole localstorage ::: ' + localStorage.getItem('role'));
+
           this.router.navigate(['dashboard']);
         }
       }, (err) => {

@@ -23,7 +23,6 @@ export class LivingAquariumService {
         catchError(this.handleError('dafabetApi', []))
       );
   }
-
   getAllRegisterUser(): Observable<any> {
     return this.http
     .get(`${this.laURL}/admin/getallusers`)
@@ -69,7 +68,6 @@ export class LivingAquariumService {
         catchError(this.handleError('LivingAquarium', []))
       );
   }
-
   calculateEconomicIndicator(ecoData: any): Observable<any> {
     return this.http.post<any>(this.laURL + '/admin/farm/economicindicators', ecoData)
     .pipe(
@@ -91,5 +89,6 @@ export class LivingAquariumService {
   private log(message: string) {
     console.log(message);
   }
+
 }
 
