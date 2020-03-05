@@ -34,7 +34,6 @@ export class SidebarComponent implements OnInit {
     private renderer: Renderer2) {
 
     router.events.subscribe((event: Event) => {
-
       if (event instanceof NavigationStart) {
         $('.modal').modal('hide');
         // console.log(event.url);
@@ -136,12 +135,18 @@ export class SidebarComponent implements OnInit {
       }
     });
 
-    this.checkUserRole = localStorage.getItem('role');
-    console.log('checkAdmin role', this.checkUserRole);
-    if (this.checkUserRole === '4') { this.isAdmin = true; }
+
   }
 
   ngOnInit() {
+    this.checkUserRole = localStorage.getItem('role');
+    console.log('checkAdmin role', this.checkUserRole);
+    if (this.checkUserRole === '4') {
+      this.isAdmin = true;
+    } else {
+      this.isAdmin = false;
+    }
+
     this.opts = {
       barBackground: '#ccc',
       gridBackground: 'transparent',

@@ -61,17 +61,17 @@ export class ClientProfileDetailsComponent implements OnInit {
     console.log('client profile ctr: growthInWorkforce ==>', this.fishPondHealth.growthInWorkforce);
     console.log('client profile ctr: growthInProductionUnits ==>', this.fishPondHealth.growthInProductionUnits);
 
-    console.log('client profile ctr: state data ==>', this.fishPondProductionData.feedConversionRation);
-    console.log('client profile ctr: profitability ==>', this.fishPondProductionData.growthReate);
-    console.log('client profile ctr: growthInWorkforce ==>', this.fishPondProductionData.hatchability);
-    console.log('client profile ctr: growthInProductionUnits ==>', this.fishPondProductionData.sexReversalGrowthRate);
+    console.log('client profile ctr: feedConversionRation ==>', this.fishPondProductionData.feedConversionRation);
+    console.log('client profile ctr: growthReate ==>', this.fishPondProductionData.growthReate);
+    console.log('client profile ctr: hatchability ==>', this.fishPondProductionData.hatchability);
+    console.log('client profile ctr: sexReversalGrowthRate ==>', this.fishPondProductionData.sexReversalGrowthRate);
     console.log('client profile ctr: state data ==>', this.fishPondProductionData.sexReversalMortality);
-    console.log('client profile ctr: profitability ==>', this.fishPondProductionData.sexReversalMortalityRate);
-    console.log('client profile ctr: growthInWorkforce ==>', this.fishPondProductionData.weightGainAtNursery);
-    console.log('client profile ctr: growthInProductionUnits ==>', this.fishPondProductionData.growthRateAtNursery);
-    console.log('client profile ctr: profitability ==>', this.fishPondProductionData.recoveryRateDuringNursery);
-    console.log('client profile ctr: growthInWorkforce ==>', this.fishPondProductionData.mortalityDuringNursery);
-    console.log('client profile ctr: growthInProductionUnits ==>', this.fishPondProductionData.growthRateAtNursery);
+    console.log('client profile ctr: sexReversalMortalityRate ==>', this.fishPondProductionData.sexReversalMortalityRate);
+    console.log('client profile ctr: weightGainAtNursery ==>', this.fishPondProductionData.weightGainAtNursery);
+    console.log('client profile ctr: growthRateAtNursery ==>', this.fishPondProductionData.growthRateAtNursery);
+    console.log('client profile ctr: recoveryRateDuringNursery ==>', this.fishPondProductionData.recoveryRateDuringNursery);
+    console.log('client profile ctr: mortalityDuringNursery ==>', this.fishPondProductionData.mortalityDuringNursery);
+    console.log('client profile ctr: mortalityRateDuringNursery ==>', this.fishPondProductionData.mortalityRateDuringNursery);
 
   }
 

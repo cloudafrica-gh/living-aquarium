@@ -10,64 +10,13 @@
             Profile</a>
         </div> -->
     </div>
-    <!-- 
-      <div class="card-box m-b-0">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="profile-view">
-              <div class="profile-img-wrap">
-                <div class="profile-img">
-                  <a href="javascript:"><img class="avatar" src="assets/img/user.jpg" alt=""></a>
-                </div>
-              </div>
-              <div class="profile-basic">
-                <div class="row">
-                  <div class="col-md-5">
-                    <div class="profile-info-left">
-                      <h3 class="user-name m-t-0">{{viewP.companyName}}</h3>
-                      <h5 class="company-role m-t-0 m-b-0">{{viewP.contactPerson}}</h5>
-                      <small class="text-muted">{{viewP.designation}}</small>
-                      <div class="staff-id">CLT-00{{viewP.clientID}}</div>
-                      <div class="staff-msg"><a routerLink="../../../chat" class="btn btn-primary">Send Message</a></div>
-                    </div>
-                  </div>
-                  <div class="col-md-7">
-                    <ul class="personal-info">
-                      <li>
-                        <span class="title">Phone:</span>
-                        <span class="text"><a href="javascript:">{{viewP.mobile}}</a></span>
-                      </li>
-                      <li>
-                        <span class="title">Email:</span>
-                        <span class="text"><a href="javascript:">{{viewP.email}}</a></span>
-                      </li>
-                      <li>
-                        <span class="title">Birthday:</span>
-                        <span class="text">{{viewP.birthday.formatted}}</span>
-                      </li>
-                      <li>
-                        <span class="title">Address:</span>
-                        <span class="text">{{viewP.address}}</span>
-                      </li>
-                      <li>
-                        <span class="title">Gender:</span>
-                        <span class="text">{{viewP.gender}}</span>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> -->
 
     <div class="card-box tab-box">
       <div class="row user-tabs">
         <div class="col-lg-12 col-md-12 col-sm-12 line-tabs">
           <ul class="nav nav-tabs tabs nav-tabs-bottom">
             <li class="active col-sm-3"><a data-toggle="tab" href="#myprojects">Fish Pond Health</a></li>
-            <li class="col-sm-3"><a data-toggle="tab" href="#tasks">Fish Pond Production Data</a></li>
+            <li class="col-sm-3"><a data-toggle="tab" href="#tasks">Fish Pond Produc tion Data</a></li>
           </ul>
         </div>
       </div>
@@ -80,305 +29,59 @@
             <div class="row">
               <div class="col-lg-3 col-sm-4">
                 <div class="card-box project-box">
-                  <div class="dropdown profile-action">
-                    <a href="javascript:" class="action-icon dropdown-toggle" data-toggle="dropdown"
-                      aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
-                    <ul class="dropdown-menu pull-right">
-                      <li><a href="javascript:" data-toggle="modal" data-target="#edit_project"><i
-                            class="fa fa-pencil m-r-5"></i>
-                          Edit</a></li>
-                      <li><a href="javascript:" data-toggle="modal" data-target="#delete_project"><i
-                            class="fa fa-trash-o m-r-5"></i>
-                          Delete</a></li>
-                    </ul>
-                  </div>
                   <h4 class="project-title"><a href="javascript:">Profitability</a></h4>
                   <small class="block text-ellipsis m-b-15">
-                    <!-- <span class="text-xs">1</span> <span class="text-muted"> open tasks, </span>
-                      <span class="text-xs">9</span> <span class="text-muted"> tasks completed</span> -->
                   </small>
-                  <p class="">
-                    <b>{{this.fishPondHealth.profitability}}</b>
-                  </p>
+                  <h2><b>{{this.fishPondHealth.profitability}}</b></h2>
 
-                  <p class="m-b-5">Progress <span class="text-success pull-right">30%</span></p>
+                  <p class="m-b-5">Progress <span class="text-success pull-right">{{this.fishPondHealth.profitability}}</span></p>
                   <div class="progress progress-xs m-b-0">
                     <div class="progress-bar progress-bar-success" role="progressbar"
-                      tooltip="{{this.fishPondHealth.profitability}}%" title="{{this.fishPondHealth.profitability}}%"
-                      style="width: 30%"></div>
+                      tooltip="{{this.fishPondHealth.profitability}}" title="{{this.fishPondHealth.profitability}}"
+                      style="width: {{this.fishPondHealth.profitability}}%"></div>
                   </div>
                 </div>
               </div>
               <div class="col-lg-3 col-sm-4">
                 <div class="card-box project-box">
-                  <div class="dropdown profile-action">
-                    <a href="javascript:" class="action-icon dropdown-toggle" data-toggle="dropdown"
-                      aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
-                    <ul class="dropdown-menu pull-right">
-                      <li><a href="javascript:" data-toggle="modal" data-target="#edit_project"><i
-                            class="fa fa-pencil m-r-5"></i>
-                          Edit</a></li>
-                      <li><a href="javascript:" data-toggle="modal" data-target="#delete_project"><i
-                            class="fa fa-trash-o m-r-5"></i>
-                          Delete</a></li>
-                    </ul>
-                  </div>
                   <h4 class="project-title"><a href="javascript:">Growth In Workforce</a></h4>
                   <small class="block text-ellipsis m-b-15">
-                    <!-- <span class="text-xs">1</span> <span class="text-muted"> open tasks, </span>
-                      <span class="text-xs">9</span> <span class="text-muted"> tasks completed</span> -->
+                 
                   </small>
-                  <p class="">
-                    <b>{{this.fishPondHealth.growthInWorkforce}}</b>
-                  </p>
 
-                  <p class="m-b-5">Progress <span class="text-success pull-right">100%</span></p>
+                  <h2><b>{{this.fishPondHealth.growthInWorkforce}}</b></h2>
+                  <p class="m-b-5">Progress <span class="text-success pull-right">{{this.fishPondHealth.growthInWorkforce}}</span></p>
                   <div class="progress progress-xs m-b-0">
-                    <div class="progress-bar progress-bar-success" role="progressbar" tooltip="{{this.fishPondHealth.profitability}}%" title="{{this.fishPondHealth.profitability}}%"
-                      style="width: 100%"></div>
+                    <div class="progress-bar progress-bar-success" role="progressbar" tooltip="{{this.fishPondHealth.growthInWorkforce}}" title="{{this.fishPondHealth.growthInWorkforce}}"
+                      style="width: {{this.fishPondHealth.growthInWorkforce}}%"></div>
                   </div>
                 </div>
               </div>
               <div class="col-lg-3 col-sm-4">
                 <div class="card-box project-box">
-                  <div class="dropdown profile-action">
-                    <a href="javascript:" class="action-icon dropdown-toggle" data-toggle="dropdown"
-                      aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
-                    <ul class="dropdown-menu pull-right">
-                      <li><a href="javascript:" data-toggle="modal" data-target="#edit_project"><i
-                            class="fa fa-pencil m-r-5"></i>
-                          Edit</a></li>
-                      <li><a href="javascript:" data-toggle="modal" data-target="#delete_project"><i
-                            class="fa fa-trash-o m-r-5"></i>
-                          Delete</a></li>
-                    </ul>
-                  </div>
+                 
                   <h4 class="project-title"><a href="javascript:">Growth Production Units</a></h4>
                   <small class="block text-ellipsis m-b-15">
-                    <!-- <span class="text-xs">1</span> <span class="text-muted"> open tasks, </span>
-                      <span class="text-xs">9</span> <span class="text-muted"> tasks completed</span> -->
+                   
                   </small>
-                  <p class="">
-                    <b>{{this.fishPondHealth.growthInProductionUnits}}</b>
-                  </p>
-
-                  <p class="m-b-5">Progress <span class="text-success pull-right">10%</span></p>
+           
+                  <h2><b>{{this.fishPondHealth.growthInProductionUnits}}</b></h2>
+                  <p class="m-b-5">Progress <span class="text-success pull-right">{{this.fishPondHealth.growthInProductionUnits}}</span></p>
                   <div class="progress progress-xs m-b-0">
-                    <div class="progress-bar progress-bar-success" role="progressbar" tooltip="{{this.fishPondHealth.profitability}}%" title="{{this.fishPondHealth.profitability}}%"
-                      style="width: 10%"></div>
+                    <div class="progress-bar progress-bar-success" role="progressbar" tooltip="{{this.fishPondHealth.growthInProductionUnits}}" title="{{this.fishPondHealth.growthInProductionUnits}}"
+                      style="width: {{this.fishPondHealth.growthInProductionUnits}}%"></div>
                   </div>
                 </div>
               </div>
-              <!-- <div class="col-lg-3 col-sm-4">
-                  <div class="card-box project-box">
-                    <div class="dropdown profile-action">
-                      <a href="javascript:" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i
-                          class="fa fa-ellipsis-v"></i></a>
-                      <ul class="dropdown-menu pull-right">
-                        <li><a href="javascript:" data-toggle="modal" data-target="#edit_project"><i class="fa fa-pencil m-r-5"></i>
-                            Edit</a></li>
-                        <li><a href="javascript:" data-toggle="modal" data-target="#delete_project"><i class="fa fa-trash-o m-r-5"></i>
-                            Delete</a></li>
-                      </ul>
-                    </div>
-                    <h4 class="project-title"><a href="javascript:">School Guru</a></h4>
-                    <small class="block text-ellipsis m-b-15">
-                      <span class="text-xs">2</span> <span class="text-muted"> open tasks, </span>
-                      <span class="text-xs">5</span> <span class="text-muted"> tasks completed</span>
-                    </small>
-                    <p class="text-muted">Lorem Ipsum is simply dummy text of the printing and
-                      typesetting industry. When an unknown printer took a galley of type and
-                      scrambled it...
-                    </p>
-                    <div class="pro-deadline m-b-15">
-                      <div class="sub-title">
-                        Deadline:
-                      </div>
-                      <div class="text-muted">
-                        8 Sep 2017
-                      </div>
-                    </div>
-                    <div class="project-members m-b-15">
-                      <div>Project Leader :</div>
-                      <ul class="team-members">
-                        <li>
-                          <a href="javascript:" tooltip="Jeffery Lalor" title="Jeffery Lalor"><img src="assets/img/user.jpg"
-                              alt="Jeffery Lalor"></a>
-                        </li>
-                      </ul>
-                    </div>
-                    <div class="project-members m-b-15">
-                      <div>Team :</div>
-                      <ul class="team-members">
-                        <li>
-                          <a href="javascript:" tooltip="John Doe" title="John Doe"><img src="assets/img/user.jpg" alt="John Doe"></a>
-                        </li>
-                        <li>
-                          <a href="javascript:" tooltip="Richard Miles" title="Richard Miles"><img src="assets/img/user.jpg"
-                              alt="Richard Miles"></a>
-                        </li>
-                        <li>
-                          <a href="javascript:" tooltip="John Smith" title="John Smith"><img src="assets/img/user.jpg"
-                              alt="John Smith"></a>
-                        </li>
-                        <li>
-                          <a href="javascript:" tooltip="Mike Litorus" title="Mike Litorus"><img src="assets/img/user.jpg"
-                              alt="Mike Litorus"></a>
-                        </li>
-                        <li>
-                          <a href="javascript:" class="all-users">+15</a>
-                        </li>
-                      </ul>
-                    </div>
-                    <p class="m-b-5">Progress <span class="text-success pull-right">40%</span></p>
-                    <div class="progress progress-xs m-b-0">
-                      <div class="progress-bar progress-bar-success" role="progressbar" tooltip="40%" title="40%" style="width: 40%"></div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-3 col-sm-4">
-                  <div class="card-box project-box">
-                    <div class="dropdown profile-action">
-                      <a href="javascript:" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i
-                          class="fa fa-ellipsis-v"></i></a>
-                      <ul class="dropdown-menu pull-right">
-                        <li><a href="javascript:" data-toggle="modal" data-target="#edit_project"><i class="fa fa-pencil m-r-5"></i>
-                            Edit</a></li>
-                        <li><a href="javascript:" data-toggle="modal" data-target="#delete_project"><i class="fa fa-trash-o m-r-5"></i>
-                            Delete</a></li>
-                      </ul>
-                    </div>
-                    <h4 class="project-title"><a href="javascript:">Penabook</a></h4>
-                    <small class="block text-ellipsis m-b-15">
-                      <span class="text-xs">3</span> <span class="text-muted"> open tasks, </span>
-                      <span class="text-xs">3</span> <span class="text-muted"> tasks completed</span>
-                    </small>
-                    <p class="text-muted">Lorem Ipsum is simply dummy text of the printing and
-                      typesetting industry. When an unknown printer took a galley of type and
-                      scrambled it...
-                    </p>
-                    <div class="pro-deadline m-b-15">
-                      <div class="sub-title">
-                        Deadline:
-                      </div>
-                      <div class="text-muted">
-                        8 Sep 2017
-                      </div>
-                    </div>
-                    <div class="project-members m-b-15">
-                      <div>Project Leader :</div>
-                      <ul class="team-members">
-                        <li>
-                          <a href="javascript:" tooltip="Jeffery Lalor" title="Jeffery Lalor"><img src="assets/img/user.jpg"
-                              alt="Jeffery Lalor"></a>
-                        </li>
-                      </ul>
-                    </div>
-                    <div class="project-members m-b-15">
-                      <div>Team :</div>
-                      <ul class="team-members">
-                        <li>
-                          <a href="javascript:" tooltip="John Doe" title="John Doe"><img src="assets/img/user.jpg" alt="John Doe"></a>
-                        </li>
-                        <li>
-                          <a href="javascript:" tooltip="Richard Miles" title="Richard Miles"><img src="assets/img/user.jpg"
-                              alt="Richard Miles"></a>
-                        </li>
-                        <li>
-                          <a href="javascript:" tooltip="John Smith" title="John Smith"><img src="assets/img/user.jpg"
-                              alt="John Smith"></a>
-                        </li>
-                        <li>
-                          <a href="javascript:" tooltip="Mike Litorus" title="Mike Litorus"><img src="assets/img/user.jpg"
-                              alt="Mike Litorus"></a>
-                        </li>
-                        <li>
-                          <a href="javascript:" class="all-users">+15</a>
-                        </li>
-                      </ul>
-                    </div>
-                    <p class="m-b-5">Progress <span class="text-success pull-right">40%</span></p>
-                    <div class="progress progress-xs m-b-0">
-                      <div class="progress-bar progress-bar-success" role="progressbar" tooltip="40%" title="40%" style="width: 40%"></div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-3 col-sm-4">
-                  <div class="card-box project-box">
-                    <div class="dropdown profile-action">
-                      <a href="javascript:" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i
-                          class="fa fa-ellipsis-v"></i></a>
-                      <ul class="dropdown-menu pull-right">
-                        <li><a href="javascript:" data-toggle="modal" data-target="#edit_project"><i class="fa fa-pencil m-r-5"></i>
-                            Edit</a></li>
-                        <li><a href="javascript:" data-toggle="modal" data-target="#delete_project"><i class="fa fa-trash-o m-r-5"></i>
-                            Delete</a></li>
-                      </ul>
-                    </div>
-                    <h4 class="project-title"><a href="javascript:">Harvey Clinic</a></h4>
-                    <small class="block text-ellipsis m-b-15">
-                      <span class="text-xs">12</span> <span class="text-muted"> open tasks, </span>
-                      <span class="text-xs">4</span> <span class="text-muted"> tasks completed</span>
-                    </small>
-                    <p class="text-muted">Lorem Ipsum is simply dummy text of the printing and
-                      typesetting industry. When an unknown printer took a galley of type and
-                      scrambled it...
-                    </p>
-                    <div class="pro-deadline m-b-15">
-                      <div class="sub-title">
-                        Deadline:
-                      </div>
-                      <div class="text-muted">
-                        8 Sep 2017
-                      </div>
-                    </div>
-                    <div class="project-members m-b-15">
-                      <div>Project Leader :</div>
-                      <ul class="team-members">
-                        <li>
-                          <a href="javascript:" tooltip="Jeffery Lalor" title="Jeffery Lalor"><img src="assets/img/user.jpg"
-                              alt="Jeffery Lalor"></a>
-                        </li>
-                      </ul>
-                    </div>
-                    <div class="project-members m-b-15">
-                      <div>Team :</div>
-                      <ul class="team-members">
-                        <li>
-                          <a href="javascript:" tooltip="John Doe" title="John Doe"><img src="assets/img/user.jpg" alt="John Doe"></a>
-                        </li>
-                        <li>
-                          <a href="javascript:" tooltip="Richard Miles" title="Richard Miles"><img src="assets/img/user.jpg"
-                              alt="Richard Miles"></a>
-                        </li>
-                        <li>
-                          <a href="javascript:" tooltip="John Smith" title="John Smith"><img src="assets/img/user.jpg"
-                              alt="John Smith"></a>
-                        </li>
-                        <li>
-                          <a href="javascript:" tooltip="Mike Litorus" title="Mike Litorus"><img src="assets/img/user.jpg"
-                              alt="Mike Litorus"></a>
-                        </li>
-                        <li>
-                          <a href="javascript:" class="all-users">+15</a>
-                        </li>
-                      </ul>
-                    </div>
-                    <p class="m-b-5">Progress <span class="text-success pull-right">40%</span></p>
-                    <div class="progress progress-xs m-b-0">
-                      <div class="progress-bar progress-bar-success" role="progressbar" tooltip="40%" title="40%" style="width: 40%"></div>
-                    </div>
-                  </div>
-                </div> -->
-
+        
             </div>
           </div>
 
           <div id="tasks" class="tab-pane fade">
             <div class="row">
-              <div class="col-lg-3 col-sm-4">
+              <div class="col-lg-4 col-sm-4">
                 <div class="card-box project-box">
-                  <div class="dropdown profile-action">
+                  <!-- <div class="dropdown profile-action">
                     <a href="javascript:" class="action-icon dropdown-toggle" data-toggle="dropdown"
                       aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
                     <ul class="dropdown-menu pull-right">
@@ -389,148 +92,60 @@
                             class="fa fa-trash-o m-r-5"></i>
                           Delete</a></li>
                     </ul>
-                  </div>
+                  </div> -->
                   <h4 class="project-title"><a href="javascript:">FeedConversionRation</a></h4>
                   <small class="block text-ellipsis m-b-15">
-                    <!-- <span class="text-xs">1</span> <span class="text-muted"> open tasks, </span>
-                      <span class="text-xs">9</span> <span class="text-muted"> tasks completed</span> -->
+                   
                   </small>
-                  <p class="">
-                    <b>{{this.fishPondProductionData.feedConversionRation}}</b>
-                  </p>
-
-                  <p class="m-b-5">Progress <span class="text-success pull-right">30%</span></p>
+                  
+                  <h2><b>{{this.fishPondProductionData.feedConversionRation}}</b></h2>
+                  <p class="m-b-5">Progress <span class="text-success pull-right">{{this.fishPondProductionData.feedConversionRation}}</span></p>
                   <div class="progress progress-xs m-b-0">
                     <div class="progress-bar progress-bar-success" role="progressbar"
                       tooltip="{{this.fishPondProductionData.feedConversionRation}}%" title="{{this.fishPondProductionData.feedConversionRation}}%"
-                      style="width: 30%"></div>
+                      style="width:{{this.fishPondProductionData.feedConversionRation}}%"></div>
                   </div>
                 </div>
               </div>
-              <div class="col-lg-3 col-sm-4">
+              <div class="col-lg-4 col-sm-4">
                 <div class="card-box project-box">
-                  <div class="dropdown profile-action">
-                    <a href="javascript:" class="action-icon dropdown-toggle" data-toggle="dropdown"
-                      aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
-                    <ul class="dropdown-menu pull-right">
-                      <li><a href="javascript:" data-toggle="modal" data-target="#edit_project"><i
-                            class="fa fa-pencil m-r-5"></i>
-                          Edit</a></li>
-                      <li><a href="javascript:" data-toggle="modal" data-target="#delete_project"><i
-                            class="fa fa-trash-o m-r-5"></i>
-                          Delete</a></li>
-                    </ul>
-                  </div>
-                  <h4 class="project-title"><a href="javascript:">Growth In Workforce</a></h4>
+                
+                  <h4 class="project-title"><a href="javascript:">Growth Reate</a></h4>
                   <small class="block text-ellipsis m-b-15">
-                    <!-- <span class="text-xs">1</span> <span class="text-muted"> open tasks, </span>
-                      <span class="text-xs">9</span> <span class="text-muted"> tasks completed</span> -->
+                   
                   </small>
-                  <p class="">
-                    <b>{{this.fishPondProductionData.growthInWorkforce}}</b>
-                  </p>
-
-                  <p class="m-b-5">Progress <span class="text-success pull-right">100%</span></p>
-                  <div class="progress progress-xs m-b-0">
-                    <div class="progress-bar progress-bar-success" role="progressbar" tooltip="{{this.fishPondHealth.profitability}}%" title="{{this.fishPondHealth.profitability}}%"
-                      style="width: 100%"></div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-3 col-sm-4">
-                <div class="card-box project-box">
-                  <div class="dropdown profile-action">
-                    <a href="javascript:" class="action-icon dropdown-toggle" data-toggle="dropdown"
-                      aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
-                    <ul class="dropdown-menu pull-right">
-                      <li><a href="javascript:" data-toggle="modal" data-target="#edit_project"><i
-                            class="fa fa-pencil m-r-5"></i>
-                          Edit</a></li>
-                      <li><a href="javascript:" data-toggle="modal" data-target="#delete_project"><i
-                            class="fa fa-trash-o m-r-5"></i>
-                          Delete</a></li>
-                    </ul>
-                  </div>
-                  <h4 class="project-title"><a href="javascript:">Growth Production Units</a></h4>
-                  <small class="block text-ellipsis m-b-15">
-                    <!-- <span class="text-xs">1</span> <span class="text-muted"> open tasks, </span>
-                      <span class="text-xs">9</span> <span class="text-muted"> tasks completed</span> -->
-                  </small>
-                  <p class="">
-                    <b>{{this.fishPondProductionData.growthInProductionUnits}}</b>
-                  </p>
-
-                  <p class="m-b-5">Progress <span class="text-success pull-right">10%</span></p>
-                  <div class="progress progress-xs m-b-0">
-                    <div class="progress-bar progress-bar-success" role="progressbar" tooltip="{{this.fishPondHealth.profitability}}%" title="{{this.fishPondHealth.profitability}}%"
-                      style="width: 10%"></div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-3 col-sm-4">
-                <div class="card-box project-box">
-                  <div class="dropdown profile-action">
-                    <a href="javascript:" class="action-icon dropdown-toggle" data-toggle="dropdown"
-                      aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
-                    <ul class="dropdown-menu pull-right">
-                      <li><a href="javascript:" data-toggle="modal" data-target="#edit_project"><i
-                            class="fa fa-pencil m-r-5"></i>
-                          Edit</a></li>
-                      <li><a href="javascript:" data-toggle="modal" data-target="#delete_project"><i
-                            class="fa fa-trash-o m-r-5"></i>
-                          Delete</a></li>
-                    </ul>
-                  </div>
-                  <h4 class="project-title"><a href="javascript:">Sex Reversal Growth Rate</a></h4>
-                  <small class="block text-ellipsis m-b-15">
-                    <!-- <span class="text-xs">1</span> <span class="text-muted"> open tasks, </span>
-                      <span class="text-xs">9</span> <span class="text-muted"> tasks completed</span> -->
-                  </small>
-                  <p class="">
-                    <b>{{this.fishPondProductionData.sexReversalGrowthRate}}</b>
-                  </p>
-
-                  <p class="m-b-5">Progress <span class="text-success pull-right">10%</span></p>
-                  <div class="progress progress-xs m-b-0">
-                    <div class="progress-bar progress-bar-success" role="progressbar" tooltip="{{this.fishPondHealth.profitability}}%" title="{{this.fishPondHealth.profitability}}%"
-                      style="width: 10%"></div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-3 col-sm-4">
-                <div class="card-box project-box">
-                  <div class="dropdown profile-action">
-                    <a href="javascript:" class="action-icon dropdown-toggle" data-toggle="dropdown"
-                      aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
-                    <ul class="dropdown-menu pull-right">
-                      <li><a href="javascript:" data-toggle="modal" data-target="#edit_project"><i
-                            class="fa fa-pencil m-r-5"></i>
-                          Edit</a></li>
-                      <li><a href="javascript:" data-toggle="modal" data-target="#delete_project"><i
-                            class="fa fa-trash-o m-r-5"></i>
-                          Delete</a></li>
-                    </ul>
-                  </div>
-                  <h4 class="project-title"><a href="javascript:">Sex Reversal Mortality</a></h4>
-                  <small class="block text-ellipsis m-b-15">
-                    <!-- <span class="text-xs">1</span> <span class="text-muted"> open tasks, </span>
-                      <span class="text-xs">9</span> <span class="text-muted"> tasks completed</span> -->
-                  </small>
-                  <p class="">
-                    <b>{{this.fishPondProductionData.sexReversalMortality}}</b>
-                  </p>
-
-                  <p class="m-b-5">Progress <span class="text-success pull-right">30%</span></p>
+               
+                  <h2><b>{{this.fishPondProductionData.growthReate}}</b></h2>
+                  <p class="m-b-5">Progress <span class="text-success pull-right">{{this.fishPondProductionData.growthReate}}</span></p>
                   <div class="progress progress-xs m-b-0">
                     <div class="progress-bar progress-bar-success" role="progressbar"
-                      tooltip="{{this.fishPondProductionData.sexReversalMortality}}%" title="{{this.fishPondProductionData.sexReversalMortality}}%"
-                      style="width: 30%"></div>
+                      tooltip="{{this.fishPondProductionData.growthReate}}" title="{{this.fishPondProductionData.growthReate}}"
+                      style="width:{{this.fishPondProductionData.growthReate}}%"></div>
                   </div>
                 </div>
               </div>
-              <div class="col-lg-3 col-sm-4">
+              <div class="col-lg-4 col-sm-4">
                 <div class="card-box project-box">
-                  <div class="dropdown profile-action">
+                
+                  <h4 class="project-title"><a href="javascript:">Hatchability</a></h4>
+                  <small class="block text-ellipsis m-b-15">
+                   
+                  </small>
+               
+                  <h2><b>{{this.fishPondProductionData.hatchability}}</b></h2>
+                  <p class="m-b-5">Progress <span class="text-success pull-right">{{this.fishPondProductionData.hatchability}}</span></p>
+                  <div class="progress progress-xs m-b-0">
+                    <div class="progress-bar progress-bar-success" role="progressbar"
+                      tooltip="{{this.fishPondProductionData.feedConversionRation}}" title="{{this.fishPondProductionData.hatchability}}"
+                      style="width:{{this.fishPondProductionData.hatchability}}%"></div>
+                  </div>
+                </div>
+              </div>
+           
+      
+              <div class="col-lg-4 col-sm-4">
+                <div class="card-box project-box">
+                  <!-- <div class="dropdown profile-action">
                     <a href="javascript:" class="action-icon dropdown-toggle" data-toggle="dropdown"
                       aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
                     <ul class="dropdown-menu pull-right">
@@ -541,26 +156,23 @@
                             class="fa fa-trash-o m-r-5"></i>
                           Delete</a></li>
                     </ul>
-                  </div>
-                  <h4 class="project-title"><a href="javascript:">sexReversalMortalityRate</a></h4>
+                  </div> -->
+                  <h4 class="project-title"><a href="javascript:">Sex Reversal GrowthRate</a></h4>
                   <small class="block text-ellipsis m-b-15">
-                    <!-- <span class="text-xs">1</span> <span class="text-muted"> open tasks, </span>
-                      <span class="text-xs">9</span> <span class="text-muted"> tasks completed</span> -->
+                    
                   </small>
-                  <p class="">
-                    <b>{{this.fishPondProductionData.sexReversalMortalityRate}}</b>
-                  </p>
-
-                  <p class="m-b-5">Progress <span class="text-success pull-right">100%</span></p>
+                 
+                  <h2><b>{{this.fishPondProductionData.sexReversalGrowthRate}}</b></h2>
+                  <p class="m-b-5">Progress <span class="text-success pull-right">{{this.fishPondProductionData.sexReversalGrowthRate}}</span></p>
                   <div class="progress progress-xs m-b-0">
-                    <div class="progress-bar progress-bar-success" role="progressbar" tooltip="{{this.fishPondHealth.sexReversalMortalityRate}}%" title="{{this.fishPondHealth.sexReversalMortalityRate}}%"
-                      style="width: 100%"></div>
+                    <div class="progress-bar progress-bar-success" role="progressbar" tooltip="{{this.fishPondProductionData.sexReversalGrowthRate}}" title="{{this.fishPondProductionData.sexReversalGrowthRate}}"
+                      style="width: {{this.fishPondProductionData.sexReversalGrowthRate}}%"></div>
                   </div>
                 </div>
               </div>
-              <div class="col-lg-3 col-sm-4">
+              <div class="col-lg-4 col-sm-4">
                 <div class="card-box project-box">
-                  <div class="dropdown profile-action">
+                  <!-- <div class="dropdown profile-action">
                     <a href="javascript:" class="action-icon dropdown-toggle" data-toggle="dropdown"
                       aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
                     <ul class="dropdown-menu pull-right">
@@ -571,26 +183,24 @@
                             class="fa fa-trash-o m-r-5"></i>
                           Delete</a></li>
                     </ul>
-                  </div>
-                  <h4 class="project-title"><a href="javascript:">Weight Gain At Nursery</a></h4>
+                  </div> -->
+                  <h4 class="project-title"><a href="javascript:">Sex Reversal Mortality</a></h4>
                   <small class="block text-ellipsis m-b-15">
-                    <!-- <span class="text-xs">1</span> <span class="text-muted"> open tasks, </span>
-                      <span class="text-xs">9</span> <span class="text-muted"> tasks completed</span> -->
+                    
                   </small>
-                  <p class="">
-                    <b>{{this.fishPondProductionData.weightGainAtNursery}}</b>
-                  </p>
-
-                  <p class="m-b-5">Progress <span class="text-success pull-right">10%</span></p>
+            
+                  <h2><b>{{this.fishPondProductionData.sexReversalMortality}}</b></h2>
+                  <p class="m-b-5">Progress <span class="text-success pull-right">{{this.fishPondProductionData.sexReversalMortality}}</span></p>
                   <div class="progress progress-xs m-b-0">
-                    <div class="progress-bar progress-bar-success" role="progressbar" tooltip="{{this.fishPondHealth.weightGainAtNursery}}%" title="{{this.fishPondHealth.weightGainAtNursery}}%"
-                      style="width: 10%"></div>
+                    <div class="progress-bar progress-bar-success" role="progressbar"
+                      tooltip="{{this.fishPondProductionData.sexReversalMortality}}" title="{{this.fishPondProductionData.sexReversalMortality}}"
+                      style="width: {{this.fishPondProductionData.sexReversalMortality}}%"></div>
                   </div>
                 </div>
               </div>
-              <div class="col-lg-3 col-sm-4">
+              <div class="col-lg-4 col-sm-4">
                 <div class="card-box project-box">
-                  <div class="dropdown profile-action">
+                  <!-- <div class="dropdown profile-action">
                     <a href="javascript:" class="action-icon dropdown-toggle" data-toggle="dropdown"
                       aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
                     <ul class="dropdown-menu pull-right">
@@ -601,23 +211,65 @@
                             class="fa fa-trash-o m-r-5"></i>
                           Delete</a></li>
                     </ul>
-                  </div>
-                  <h4 class="project-title"><a href="javascript:">Growth Rate At Nursery</a></h4>
-                  <small class="block text-ellipsis m-b-15">
-                    <!-- <span class="text-xs">1</span> <span class="text-muted"> open tasks, </span>
-                      <span class="text-xs">9</span> <span class="text-muted"> tasks completed</span> -->
-                  </small>
-                  <p class="">
-                    <b>{{this.fishPondProductionData.growthRateAtNursery}}</b>
-                  </p>
-
-                  <p class="m-b-5">Progress <span class="text-success pull-right">10%</span></p>
+                  </div> -->
+                  <h4 class="project-title"><a href="javascript:">sexReversal MortalityRate</a></h4>
+                  <small class="block text-ellipsis m-b-15"> </small>
+                  
+                  
+                  <h2><b>{{this.fishPondProductionData.sexReversalMortalityRate}}</b></h2>
+                  <p class="m-b-5">Progress <span class="text-success pull-right">{{this.fishPondProductionData.sexReversalMortalityRate}}</span></p>
                   <div class="progress progress-xs m-b-0">
-                    <div class="progress-bar progress-bar-success" role="progressbar" tooltip="{{this.fishPondHealth.growthRateAtNursery}}%" title="{{this.fishPondHealth.growthRateAtNursery}}%"
-                      style="width: 10%"></div>
+                    <div class="progress-bar progress-bar-success" role="progressbar" tooltip="{{this.fishPondProductionData.sexReversalMortalityRate}}" title="{{this.fishPondProductionData.sexReversalMortalityRate}}"
+                      style="width: {{this.fishPondProductionData.sexReversalMortalityRate}}%"></div>
                   </div>
                 </div>
               </div>
+              <div class="col-lg-4 col-sm-4">
+                <div class="card-box project-box">
+                  <h4 class="project-title"><a href="javascript:">Weight Gain AtNursery</a></h4>
+                  <small class="block text-ellipsis m-b-15">
+                  
+                  </small>
+              
+                    <h2><b>{{this.fishPondProductionData.weightGainAtNursery}}</b></h2>
+                  <p class="m-b-5">Progress <span class="text-success pull-right">{{this.fishPondProductionData.weightGainAtNursery}}</span></p>
+                  <div class="progress progress-xs m-b-0">
+                    <div class="progress-bar progress-bar-success" role="progressbar" tooltip="{{this.fishPondProductionData.weightGainAtNursery}}" title="{{this.fishPondProductionData.weightGainAtNursery}}"
+                      style="width: {{this.fishPondProductionData.weightGainAtNursery}}%"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-sm-4">
+                <div class="card-box project-box">
+                  <h4 class="project-title"><a href="javascript:">Growth Rate AtNursery</a></h4>
+                  <small class="block text-ellipsis m-b-15">
+                    
+                  </small>
+            
+                  <h2><b>{{this.fishPondProductionData.growthRateAtNursery}}</b></h2>
+                  <p class="m-b-5">Progress <span class="text-success pull-right">{{this.fishPondProductionData.growthRateAtNursery}}</span></p>
+                  <div class="progress progress-xs m-b-0">
+                    <div class="progress-bar progress-bar-success" role="progressbar" tooltip="{{this.fishPondProductionData.growthRateAtNursery}}" title="{{this.fishPondProductionData.growthRateAtNursery}}"
+                      style="width: {{this.fishPondProductionData.growthRateAtNursery}}%"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-sm-4">
+                <div class="card-box project-box">
+                  
+                  <h4 class="project-title"><a href="javascript:">RecoveryRate DuringNursery</a></h4>
+                  <small class="block text-ellipsis m-b-15"></small>
+           
+                  <h2><b>{{this.fishPondProductionData.recoveryRateDuringNursery}}</b></h2>
+                  <p class="m-b-5">Progress <span class="text-success pull-right">{{this.fishPondProductionData.recoveryRateDuringNursery}}</span></p>
+                  <div class="progress progress-xs m-b-0">
+                    <div class="progress-bar progress-bar-success" role="progressbar" tooltip="{{this.fishPondProductionData.recoveryRateDuringNursery}}" title="{{this.fishPondProductionData.recoveryRateDuringNursery}}"
+                      style="width: {{this.fishPondProductionData.growthInProductionUnits}}%"></div>
+                  </div>
+                </div>
+              </div>
+
             </div>
           </div>
 
