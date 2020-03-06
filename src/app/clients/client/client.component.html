@@ -62,12 +62,14 @@
                 <td>{{item.pondType}}</td>
                 <td>{{item.cubicSize}}</td>
                 <td>
-                  <button class="btn btn-primary" (click)="fishPondHealth(item)">Fish Health</button>
-                  <button class="btn btn-black btn-xs" (click)="fishPondProductionData(item)">Production Data</button>
+                  <button class="btn btn-primary" data-toggle="modal" data-target="#fishpond_health">Fish
+                    Health</button>
+                  <button class="btn btn-black btn-xs" data-toggle="modal" data-target="#fishpond_production">Production
+                    Data</button>
                 </td>
 
                 <td>
-              </td>
+                </td>
 
               </tr>
             </tbody>
@@ -445,6 +447,94 @@
       </div>
     </div>
 
+    <div id="fishpond_health" class="modal custom-modal fade" role="dialog">
+      <div class="modal-dialog">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <div class="modal-content modal-lg">
+          <div class="modal-header">
+            <h4 class="modal-title">FishPond Health Form</h4>
+          </div>
+          <div class="modal-body">
+            <form class="m-b-30" [formGroup]="fishHealthForm" (ngSubmit)="calcFishPondHealth(fishHealthForm.value)"
+              novalidate>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label class="control-label">From <span class="text-danger">*</span></label>
+                    <my-date-picker [options]="myDatePickerOptions1" formControlName="dateFrom" name="dateFrom"
+                      required></my-date-picker>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label class="control-label">To</label>
+                    <my-date-picker [options]="myDatePickerOptions1" formControlName="dateTo" name="dateTo" required>
+                    </my-date-picker>
+                  </div>
+                </div>
+                <div class="col-md-6" hidden>
+                  <div class="form-group">
+                    <label class="control-label">UserId</label>
+                    <input class="form-control" type="text" name="userId" formControlName="userId" name="userId">
+                  </div>
+                </div>
+              </div>
+
+              <div class="table-responsive m-t-15">
+              </div>
+
+              <div class="m-t-20 text-center">
+                <button class="btn btn-primary" type="submit">Calculate</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="fishpond_production" class="modal custom-modal fade" role="dialog">
+      <div class="modal-dialog">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <div class="modal-content modal-lg">
+          <div class="modal-header">
+            <h4 class="modal-title">FishPond Production Data Form</h4>
+          </div>
+          <div class="modal-body">
+            <form class="m-b-30" [formGroup]="fishHealthForm" (ngSubmit)="calcFishPondProdData(fishHealthForm.value)"
+              novalidate>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label class="control-label">From <span class="text-danger">*</span></label>
+                    <my-date-picker [options]="myDatePickerOptions1" formControlName="dateFrom" name="dateFrom"
+                      required></my-date-picker>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label class="control-label">To</label>
+                    <my-date-picker [options]="myDatePickerOptions1" formControlName="dateTo" name="dateTo" required>
+                    </my-date-picker>
+                  </div>
+                </div>
+                <div class="col-md-6" hidden>
+                  <div class="form-group">
+                    <label class="control-label">UserId</label>
+                    <input class="form-control" type="text" name="userId" formControlName="userId" name="userId">
+                  </div>
+                </div>
+              </div>
+
+              <div class="table-responsive m-t-15">
+              </div>
+
+              <div class="m-t-20 text-center">
+                <button class="btn btn-primary" type="submit">Calculate</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
 
   </div>
 </div>

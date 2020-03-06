@@ -53,6 +53,9 @@
           <table class="table table-striped custom-table" [mfData]="rows" #mf="mfDataTable" [mfRowsOnPage]="10">
             <thead>
               <tr>
+                <th style="width: 5%">
+                  <mfDefaultSorter by="">#</mfDefaultSorter>
+                </th>
                 <th style="width: 20%">
                   <mfDefaultSorter by="user_id">Name</mfDefaultSorter>
                 </th>
@@ -85,19 +88,11 @@
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let item of mf.data">
-                <!-- <td>
-                  <a href="javascript:" class="avatar">D</a>
-                  <h2><a href="javascript:">{{item.user_name}} <span>{{item.role}}</span></a></h2>
-                </td> -->
+              <tr *ngFor="let item of mf.data, let i = index">
+                <td>{{i}}</td>
                 <td>{{item.userId}}</td>
                 <td>{{item.fullName}}</td>
                 <td>{{item.email}}</td>
-                <!-- <td>
-                  <span
-                    [ngClass]="[item.role == 'Employee' ? 'label-success-border' : '',item.role == 'Admin' ? 'label-danger-border' : '',item.role == 'Client' ? 'label-info-border' : '']"
-                    class="label">{{item.role}}</span>
-                </td> -->
                 <td>{{item.phoneNumber}}</td>
                 <td>{{item.farmName}}</td>
                 <td>{{item.location}}</td>
