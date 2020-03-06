@@ -12,8 +12,8 @@
       <div class="row user-tabs">
         <div class="col-lg-12 col-md-12 col-sm-12 line-tabs">
           <ul class="nav nav-tabs tabs nav-tabs-bottom">
-            <li class="active col-sm-3"><a data-toggle="tab" href="#myprojects">Fish Pond Health</a></li>
-            <li class="col-sm-3"><a data-toggle="tab" href="#tasks">Fish Pond Produc tion Data</a></li>
+            <li class="active col-sm-3" ><a data-toggle="tab" href="#myprojects">Fishpond Health Records</a></li>
+            <li class="col-sm-3" ><a data-toggle="tab" href="#tasks">Fishpond Production Records</a></li>
           </ul>
         </div>
       </div>
@@ -22,47 +22,47 @@
     <div class="row">
       <div class="col-lg-12">
         <div class="tab-content profile-tab-content">
-          <div id="myprojects" class="tab-pane fade in active">
+          <div id="myprojects" class="tab-pane fade in active" >
             <div class="row">
               <div class="col-lg-3 col-sm-4">
                 <div class="card-box project-box">
-                  <h4 class="project-title"><a href="javascript:">Profitability</a></h4>
+                  <h4 class="project-title"><a href="javascript:">Fish PondId </a></h4>
                   <small class="block text-ellipsis m-b-15">
                   </small>
-                  <h2><b>{{this.fishPondHealth.profitability}}</b></h2>
+                  <h2><b>{{this.fishPondHealth.pondId}}</b></h2>
 
-                  <p class="m-b-5">Progress <span class="text-success pull-right">{{this.fishPondHealth.profitability}}</span></p>
+                  <p class="m-b-5">Progress <span class="text-success pull-right">{{this.fishPondHealth.pondId}}</span></p>
                   <div class="progress progress-xs m-b-0">
                     <div class="progress-bar progress-bar-success" role="progressbar"
-                      tooltip="{{this.fishPondHealth.profitability}}" title="{{this.fishPondHealth.profitability}}"
-                      style="width: {{this.fishPondHealth.profitability}}%"></div>
+                      tooltip="{{this.fishPondHealth.pondId}}" title="{{this.fishPondHealth.pondId}}"
+                      style="width: {{this.fishPondHealth.pondId}}%"></div>
                   </div>
                 </div>
               </div>
               <div class="col-lg-3 col-sm-4">
                 <div class="card-box project-box">
-                  <h4 class="project-title"><a href="javascript:">Growth In Workforce</a></h4>
+                  <h4 class="project-title"><a href="javascript:">Water Quality</a></h4>
                   <small class="block text-ellipsis m-b-15">
                  
                   </small>
 
-                  <h2><b>{{this.fishPondHealth.growthInWorkforce}}</b></h2>
-                  <p class="m-b-5">Progress <span class="text-success pull-right">{{this.fishPondHealth.growthInWorkforce}}</span></p>
+                  <h2><b>{{this.fishPondHealth.waterQuality}}</b></h2>
+                  <p class="m-b-5">Progress <span class="text-success pull-right">{{this.fishPondHealth.waterQuality}}</span></p>
                   <div class="progress progress-xs m-b-0">
-                    <div class="progress-bar progress-bar-success" role="progressbar" tooltip="{{this.fishPondHealth.growthInWorkforce}}" title="{{this.fishPondHealth.growthInWorkforce}}"
-                      style="width: {{this.fishPondHealth.growthInWorkforce}}%"></div>
+                    <div class="progress-bar progress-bar-success" role="progressbar" tooltip="{{this.fishPondHealth.waterQuality}}" title="{{this.fishPondHealth.waterQuality}}"
+                      style="width: {{this.fishPondHealth.waterQuality}}%"></div>
                   </div>
                 </div>
               </div>
               <div class="col-lg-3 col-sm-4">
                 <div class="card-box project-box">
                  
-                  <h4 class="project-title"><a href="javascript:">Growth Production Units</a></h4>
+                  <h4 class="project-title"><a href="javascript:">Mortality</a></h4>
                   <small class="block text-ellipsis m-b-15">
                    
                   </small>
            
-                  <h2><b>{{this.fishPondHealth.growthInProductionUnits}}</b></h2>
+                  <h2><b>{{this.fishPondHealth.mortality}}</b></h2>
                   <p class="m-b-5">Progress <span class="text-success pull-right">{{this.fishPondHealth.growthInProductionUnits}}</span></p>
                   <div class="progress progress-xs m-b-0">
                     <div class="progress-bar progress-bar-success" role="progressbar" tooltip="{{this.fishPondHealth.growthInProductionUnits}}" title="{{this.fishPondHealth.growthInProductionUnits}}"
@@ -70,11 +70,122 @@
                   </div>
                 </div>
               </div>
-        
+          
+              <div class="col-lg-3 col-sm-4">
+                <div class="card-box project-box">
+                 
+                  <h4 class="project-title"><a href="javascript:">Mortality</a></h4>
+                  <small class="block text-ellipsis m-b-15">
+                   
+                  </small>
+           
+                  <h2><b>{{this.fishPondHealth.mortality}}</b></h2>
+                  <p class="m-b-5">Progress <span class="text-success pull-right">{{this.fishPondHealth.mortality}}</span></p>
+                  <div class="progress progress-xs m-b-0">
+                    <div class="progress-bar progress-bar-success" role="progressbar" tooltip="{{this.fishPondHealth.mortality}}" title="{{this.fishPondHealth.mortality}}"
+                      style="width: {{this.fishPondHealth.mortality}}%"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-sm-4">
+                <div class="card-box project-box">
+                 
+                  <h4 class="project-title"><a href="javascript:">Ph Level</a></h4>
+                  <small class="block text-ellipsis m-b-15">
+                   
+                  </small>
+           
+                  <h2><b>{{this.fishPondHealth.phLevel}}</b></h2>
+                  <p class="m-b-5">Progress <span class="text-success pull-right">{{this.fishPondHealth.phLevel}}</span></p>
+                  <div class="progress progress-xs m-b-0">
+                    <div class="progress-bar progress-bar-success" role="progressbar" tooltip="{{this.fishPondHealth.phLevel}}" title="{{this.fishPondHealth.phLevel}}"
+                      style="width: {{this.fishPondHealth.phLevel}}%"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-sm-4">
+                <div class="card-box project-box">
+                  <h4 class="project-title"><a href="javascript:">Dissolved Oxygen</a></h4>
+                  <small class="block text-ellipsis m-b-15">
+                   
+                  </small>
+           
+                  <h2><b>{{this.fishPondHealth.dissolvedOxygen}}</b></h2>
+                  <p class="m-b-5">Progress <span class="text-success pull-right">{{this.fishPondHealth.dissolvedOxygen}}</span></p>
+                  <div class="progress progress-xs m-b-0">
+                    <div class="progress-bar progress-bar-success" role="progressbar" tooltip="{{this.fishPondHealth.dissolvedOxygen}}" title="{{this.fishPondHealth.dissolvedOxygen}}"
+                      style="width: {{this.fishPondHealth.dissolvedOxygen}}%"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-sm-4">
+                <div class="card-box project-box">
+                 
+                  <h4 class="project-title"><a href="javascript:">Temperature</a></h4>
+                  <small class="block text-ellipsis m-b-15">
+                   
+                  </small>
+           
+                  <h2><b>{{this.fishPondHealth.temperature}}</b></h2>
+                  <p class="m-b-5">Progress <span class="text-success pull-right">{{this.fishPondHealth.temperature}}</span></p>
+                  <div class="progress progress-xs m-b-0">
+                    <div class="progress-bar progress-bar-success" role="progressbar" tooltip="{{this.fishPondHealth.temperature}}" title="{{this.fishPondHealth.temperature}}"
+                      style="width: {{this.fishPondHealth.temperature}}%"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-sm-4">
+                <div class="card-box project-box">
+                 
+                  <h4 class="project-title"><a href="javascript:">Ammonia</a></h4>
+                  <small class="block text-ellipsis m-b-15">
+                   
+                  </small>
+           
+                  <h2><b>{{this.fishPondHealth.ammonia}}</b></h2>
+                  <p class="m-b-5">Progress <span class="text-success pull-right">{{this.fishPondHealth.ammonia}}</span></p>
+                  <div class="progress progress-xs m-b-0">
+                    <div class="progress-bar progress-bar-success" role="progressbar" tooltip="{{this.fishPondHealth.ammonia}}" title="{{this.fishPondHealth.ammonia}}"
+                      style="width: {{this.fishPondHealth.ammonia}}%"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-sm-4">
+                <div class="card-box project-box">
+                 
+                  <h4 class="project-title"><a href="javascript:">Nitrite</a></h4>
+                  <small class="block text-ellipsis m-b-15">
+                   
+                  </small>
+           
+                  <h2><b>{{this.fishPondHealth.nitrite}}</b></h2>
+                  <p class="m-b-5">Progress <span class="text-success pull-right">{{this.fishPondHealth.nitrite}}</span></p>
+                  <div class="progress progress-xs m-b-0">
+                    <div class="progress-bar progress-bar-success" role="progressbar" tooltip="{{this.fishPondHealth.nitrite}}" title="{{this.fishPondHealth.nitrite}}"
+                      style="width: {{this.fishPondHealth.nitrite}}%"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-sm-4">
+                <div class="card-box project-box">
+                 
+                  <h4 class="project-title"><a href="javascript:">Turbidity</a></h4>
+                  <small class="block text-ellipsis m-b-15">
+                   
+                  </small>
+           
+                  <h2><b>{{this.fishPondHealth.turbidity}}</b></h2>
+                  <p class="m-b-5">Progress <span class="text-success pull-right">{{this.fishPondHealth.turbidity}}</span></p>
+                  <div class="progress progress-xs m-b-0">
+                    <div class="progress-bar progress-bar-success" role="progressbar" tooltip="{{this.fishPondHealth.turbidity}}" title="{{this.fishPondHealth.turbidity}}"
+                      style="width: {{this.fishPondHealth.turbidity}}%"></div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
-          <div id="tasks" class="tab-pane fade">
+          <div id="tasks" class="tab-pane fade" >
             <div class="row">
               <div class="col-lg-4 col-sm-4">
                 <div class="card-box project-box">

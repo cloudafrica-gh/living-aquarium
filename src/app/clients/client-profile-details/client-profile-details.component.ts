@@ -17,6 +17,9 @@ export class ClientProfileDetailsComponent implements OnInit {
 
   public viewP: any;
 
+  public isFishHealth: boolean = false;
+  public isFishProduction: boolean = false;
+
   constructor(
     private clientService: AppService,
     private router: Router,
@@ -51,15 +54,23 @@ export class ClientProfileDetailsComponent implements OnInit {
     //     this.router.navigate(['clients/profile/details']);
     //   }
     // });
-
     this.fishPondHealth = this.location.getState();
     this.fishPondProductionData = this.location.getState();
 
     // this.rows = this.ponds;
     console.log('client profile ctr: state data ==>', this.fishPondHealth);
-    console.log('client profile ctr: profitability ==>', this.fishPondHealth.profitability);
-    console.log('client profile ctr: growthInWorkforce ==>', this.fishPondHealth.growthInWorkforce);
-    console.log('client profile ctr: growthInProductionUnits ==>', this.fishPondHealth.growthInProductionUnits);
+    console.log('client profile ctr: pondId ==>', this.fishPondHealth.pondId);
+    console.log('client profile ctr: waterQuality ==>', this.fishPondHealth.waterQuality);
+    console.log('client profile ctr: mortality ==>', this.fishPondHealth.mortality);
+    console.log('client profile ctr: fishDiseasePicture ==>', this.fishPondHealth.fishDiseasePicture);
+    console.log('client profile ctr: phLevel ==>', this.fishPondHealth.phLevel);
+    console.log('client profile ctr: dissolvedOxygen ==>', this.fishPondHealth.dissolvedOxygen);
+    console.log('client profile ctr: temperature ==>', this.fishPondHealth.temperature);
+    console.log('client profile ctr: ammonia ==>', this.fishPondHealth.ammonia);
+    console.log('client profile ctr: nitrite ==>', this.fishPondHealth.nitrite);
+    console.log('client profile ctr: turbidity ==>', this.fishPondHealth.turbidity);
+
+
 
     console.log('client profile ctr: feedConversionRation ==>', this.fishPondProductionData.feedConversionRation);
     console.log('client profile ctr: growthReate ==>', this.fishPondProductionData.growthReate);
@@ -72,6 +83,9 @@ export class ClientProfileDetailsComponent implements OnInit {
     console.log('client profile ctr: recoveryRateDuringNursery ==>', this.fishPondProductionData.recoveryRateDuringNursery);
     console.log('client profile ctr: mortalityDuringNursery ==>', this.fishPondProductionData.mortalityDuringNursery);
     console.log('client profile ctr: mortalityRateDuringNursery ==>', this.fishPondProductionData.mortalityRateDuringNursery);
+
+    if (this.fishPondHealth == null) { this.isFishHealth = true; }
+    if (this.isFishProduction == null) { this.isFishProduction = true; }
 
   }
 
