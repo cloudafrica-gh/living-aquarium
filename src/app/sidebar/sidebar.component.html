@@ -21,17 +21,6 @@
           </ul>
         </li>
 
-        <!-- <li [ngClass]="[url === 'dashboard'? 'active' : 'inactive',url === ''? 'active' : 'inactive']">
-          <a routerLink="/dashboard/admin"><i class="la la-dashboard"></i>
-            <span> Admin dashboard</span>
-          </a>
-        </li> -->
-        <!-- <li [ngClass]="[url === 'dashboard'? 'active' : 'inactive',url === ''? 'active' : 'inactive']">
-          <a routerLink="/dashboard"><i class="fal fa-tachometer-fastest"></i>
-            <span> User dashboard</span>
-          </a>
-        </li> -->
-
         <li class="submenu" *ngIf="isAdmin">
           <a routerLink="/dashboard/admin" [ngClass]="url === 'reports'? 'subdrop' : 'null'"><i class="la la-users"></i> 
             <span>User Dashboard </span> <span class="menu-arrow"></span>
@@ -43,15 +32,6 @@
             <!-- <li> <a routerLink="/myponds" [ngClass]="url2 === 'globalpay' ? 'active': 'null'">Economic Indicator</a></li> -->
           </ul>
         </li>
-
-        <!-- <li class="submenu">
-          <a href="javascript:" [ngClass]="url === 'reports'? 'subdrop' : 'null'"><i class="la la-pie-chart"></i> <span>
-              Reports </span> <span class="menu-arrow"></span></a>
-          <ul class="list-unstyled" [ngClass]="url === 'reports'? 'submenu-block' : 'dsply-none'">
-         
-          </ul>
-        </li> -->
-
       </ul>
 
     </div>
